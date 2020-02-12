@@ -3,18 +3,24 @@ import json
 class pokemonLoop:
     SpeciesName = ''
     InfoArray = []
+    Capabilities = []
 
-def __init__(self, Name="there", Data=['empty']):
-    self.SpeciesName = Name
-    self.InfoArray = Data
+    def __init__(self, Data=['empty']):
+        self.SpeciesName = Data[0]
+        self.InfoArray = Data
 
-def toArray(self):
-    species = {}
-    species[self.SpeciesName] = []
-    species[self.SpecieesName].append({
-        'id': self.SpeciesName
+    def setStuff(self, Data=['Empty']):
+        for i in range(self.InfoArray.size):
+            print(self.InfoArray.size, i)
 
-    })
+    def toArray(self):
+
+        species = {}
+        species[self.SpeciesName] = []
+        species[self.SpeciesName].append({
+            '_id': self.SpeciesName
+
+        })
 
 
 
