@@ -32,7 +32,6 @@ class PokemonLoop:
         self.CapaList.Naturewalk = []
         self.CapaList.Other = []
 
-
     def setAll(self):
         self.setCapabilities()
             
@@ -90,11 +89,12 @@ class PokemonLoop:
                             j += 1
                             self.CapaList.Naturewalk.append( self.InfoArray[i+j][:self.InfoArray[i+j].find(')')] )
                             doneNaturewalk = self.InfoArray[i+j].find(')') > 0
+                elif self.InfoArray[i] not in self.NonOtherCapabilities and self.InfoArray[i][0] != '(':
+                    self.CapaList.Other.append(self.InfoArray[i])
                 elif self.InfoArray[i] == "Skill":
+                    print(self.SpeciesName, self.CapaList.__dict__)
                     break
-
             i += 1
-        print(self.SpeciesName, self.CapaList.__dict__)
 
 
     def toArray(self):
