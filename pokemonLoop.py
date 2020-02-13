@@ -6,6 +6,8 @@ class PokemonLoop:
     InfoArray = []
     SpecialNames = ['TYPE:', 'GIRATINA', 'MR.', 'MIME', 'HOOPA', 'TAPU', 'ZYGARDE', 'MELOETTA', 'KYUREM', 'TORNADUS', 'LANDORUS', 'THUNDURUS',
     'SHAYMIN', 'ROTOM', 'DEOXYS', 'WORMADAM', 'DARMANITAN', 'LYCANROC', 'WISHIWASHI', 'MINIOR', 'NECROZMA']
+    # TODO: Implement this on setCapabilities
+    NonOtherCapabilities = ['Overland', 'Sky', 'Swim', 'Levitate', 'Burrow', 'Jump', 'Power', 'Naturewalk']
     CapaList = capabilities.Capabilities
 
     def __init__(self, Data):
@@ -39,43 +41,43 @@ class PokemonLoop:
         foundCapabilities = False
         while i < len(self.InfoArray):
             if self.InfoArray[i] == "Capability":
-                i+=2
+         #       i+=2
                 foundCapabilities = True
 
             if foundCapabilities:
                 if self.InfoArray[i] == 'Overland':
                     self.CapaList.Overland = int(self.InfoArray[i+1][:-1])
-                    i += 1
+          #          i += 1
                 elif self.InfoArray[i] == "Sky":
                     if self.InfoArray[i+1] == "Forme,":
                         print('Shaymin please stop breaking my code please')
-                        i += 1
+           #             i += 1
                     elif self.InfoArray[i+1].find(',') > -1:
                         self.CapaList.Sky = int(self.InfoArray[i+1][self.InfoArray[i+1].find(',')-1])
-                        i += 1
+            #            i += 1
                     else:
                         self.CapaList.Sky = int(self.InfoArray[i+1])
-                        i += 1
+             #           i += 1
                 elif self.InfoArray[i] == "Swim":
                     self.CapaList.Swim = int(self.InfoArray[i+1][:-1])
-                    i += 1
+              #      i += 1
                 elif self.InfoArray[i] == "Levitate":
                     self.CapaList.Levitate = int(self.InfoArray[i+1][:-1])
-                    i += 1
+               #     i += 1
                 elif self.InfoArray[i] == "Burrow":
                     self.CapaList.Burrow = int(self.InfoArray[i+1][:-1])
-                    i += 1
+                #    i += 1
                 elif self.InfoArray[i] == "Jump":
                     self.CapaList.JumpH = int(self.InfoArray[i+1][0])
                     self.CapaList.JumpL = int(self.InfoArray[i+1][-2])
-                    i += 1
+                 #   i += 1
                 elif self.InfoArray[i] == "Power":
                     if self.InfoArray[i+1].find(',') > -1:
                         self.CapaList.Power = int(self.InfoArray[i+1][:-1])
-                        i += 1
+                  #      i += 1
                     else:
                         self.CapaList.Power = int(self.InfoArray[i+1])
-                        i += 1                
+                   #     i += 1                
                 elif self.InfoArray[i] == "Naturewalk":
                     self.CapaList.Naturewalk = []
                     doneNaturewalk = self.InfoArray[i+1].find(')') > 0
@@ -96,12 +98,10 @@ class PokemonLoop:
 
 
     def toArray(self):
-
         species = {}
         species[self.SpeciesName] = []
         species[self.SpeciesName].append({
             '_id': self.SpeciesName
-
         })
 
 
