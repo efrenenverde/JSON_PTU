@@ -1,15 +1,17 @@
 import json
 from models import capabilities
+from models import baseStats
 
 SpecialNames = ['TYPE:', 'GIRATINA', 'MR.', 'MIME', 'HOOPA', 'TAPU', 'ZYGARDE', 'MELOETTA', 'KYUREM', 'TORNADUS', 'LANDORUS', 'THUNDURUS',
     'SHAYMIN', 'ROTOM', 'DEOXYS', 'WORMADAM', 'DARMANITAN', 'LYCANROC', 'WISHIWASHI', 'MINIOR', 'NECROZMA']
 NonOtherCapabilities = ['Overland', 'Sky', 'Swim', 'Levitate', 'Burrow', 'Jump', 'Power', 'Naturewalk']
 Naturewalks = ['Grassland', 'Desert', 'Forest', 'Urban', 'Wetlands', 'Cave', 'Ocean', 'Mountain', 'Tundra']
+SpeciesWithWeirdStats = ['PUMPKABOO', 'GOURGEIST']
 
 class PokemonLoop:
     SpeciesName = ''
     InfoArray = []
-    
+    BaseStats = baseStats.BaseStats
     CapaList = capabilities.Capabilities
 
 
@@ -23,6 +25,12 @@ class PokemonLoop:
         self.InfoArray = Data
 
     def resetAll(self):
+        self.BaseStats.HIT = 1
+        self.BaseStats.ATK = 1
+        self.BaseStats.DEF = 1
+        self.BaseStats.SAT = 1
+        self.BaseStats.SDE = 1
+        self.BaseStats.SPD = 1
         self.CapaList.Overland = 0
         self.CapaList.Sky = 0
         self.CapaList.Swim = 0
@@ -36,8 +44,31 @@ class PokemonLoop:
         self.CapaList.Other = []
 
     def setAll(self):
+        self.setBaseStats()
         self.setCapabilities()
-            
+
+    def setBaseStats(self):
+        print(self.SpeciesName)
+
+        if self.SpeciesName in SpeciesWithWeirdStats:
+            return
+
+        i = 0
+        while self.InfoArray[i] != "Base" and self.InfoArray[i+1] != "Stats:":
+            i+=1
+        while self.InfoArray[i] != "Basic":
+            if self.InfoArray[i] == "HP:":
+                self.BaseStats.HIT = int(self.InfoArray[i+1])
+                self.BaseStats.ATK = int(self.InfoArray[i+3])
+                self.BaseStats.DEF = int(self.InfoArray[i+5])
+                self.BaseStats.SAT = int(self.InfoArray[i+8])
+                self.BaseStats.SDE = int(self.InfoArray[i+11])
+                self.BaseStats.SPD = int(self.InfoArray[i+13])
+                i+=13
+            else:
+                i+=1
+
+    # TODO: Fix this mess
     def setCapabilities(self):
         i = 0
         foundCapabilities = False
@@ -83,7 +114,6 @@ class PokemonLoop:
                             self.CapaList.Naturewalk.append( self.InfoArray[i+j][:self.InfoArray[i+j].find(')')] )
                             doneNaturewalk = self.InfoArray[i+j].find(')') > 0
                 elif self.InfoArray[i] == "Skill":
-                    print(self.SpeciesName, self.CapaList.__dict__)
                     break
                 elif self.InfoArray[i] not in NonOtherCapabilities and ( len(self.InfoArray[i]) > 4 or self.InfoArray[i] == "Dead" ):
                     if not any(Nature in self.InfoArray[i] for Nature in Naturewalks):
@@ -103,8 +133,16 @@ class PokemonLoop:
                         self.CapaList.Other.append(finalCapability)
             i += 1
 
-    def toArray(self):
+    def toJson(self):
         species = {}
+
+        Stats = {}
+        Stats['HP'] = self.BaseStats.HIT
+        Stats['Attack'] = self.BaseStats.ATK
+        Stats['Defense'] = self.BaseStats.DEF
+        Stats['Special Attack'] = self.BaseStats.SAT
+        Stats['Special Defense'] = self.BaseStats.SDE
+        Stats['Speed'] = self.BaseStats.SPD
 
         Capabilities = {}
         Capabilities['Overland'] = self.CapaList.Overland
@@ -121,6 +159,7 @@ class PokemonLoop:
         species[self.SpeciesName] = []
         species[self.SpeciesName].append({
             '_id': self.SpeciesName,
+            'Base Stats': Stats,
             'Capabilities': Capabilities
         })
 

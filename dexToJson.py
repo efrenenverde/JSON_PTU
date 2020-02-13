@@ -7,7 +7,10 @@ ignoredUpper =['HP:', 'Y', 'X', 'TM', 'M', 'F', '(N),', '(N)', '(A)', 'X-',
 ignoredFirstLoop = False
 
 with open("DATA/Gen7.txt", "r") as f:
-    os.remove("data.txt")
+    try:
+        os.remove("data.txt")
+    except IOError:
+        print('File not accesible')
     for line in f:
         for word in line.split():
             if word.isupper() and word not in ignoredUpper:
@@ -15,7 +18,7 @@ with open("DATA/Gen7.txt", "r") as f:
                     currPokemon = pokemonLoop.PokemonLoop(currentPokemonArray)
                     currPokemon.resetAll()
                     currPokemon.setAll()
-                    currPokemon.toArray()
+                    currPokemon.toJson()
 
                 ignoredFirstLoop = True
                 currentPokemonArray = []
