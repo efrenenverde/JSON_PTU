@@ -2,8 +2,15 @@ import json
 from models import capabilities
 from models import baseStats
 
-SpecialNames = ['TYPE:', 'GIRATINA', 'MR.', 'MIME', 'HOOPA', 'TAPU', 'ZYGARDE', 'MELOETTA', 'KYUREM', 'TORNADUS', 'LANDORUS', 'THUNDURUS',
-    'SHAYMIN', 'ROTOM', 'DEOXYS', 'WORMADAM', 'DARMANITAN', 'LYCANROC', 'WISHIWASHI', 'MINIOR', 'NECROZMA']
+SpecialNames = ['TYPE:', 'GIRATINA', 'MR.', 'MIME', 'HOOPA', 'TAPU', 'ZYGARDE', 'MELOETTA', 'KYUREM', 'TORNADUS', 'LANDORUS', 
+'THUNDURUS','SHAYMIN', 'ROTOM', 'DEOXYS', 'WORMADAM', 'DARMANITAN', 'LYCANROC', 'WISHIWASHI', 'MINIOR', 'NECROZMA', 'NIDORAN',
+'MEOWSTIC', 'ZACIAN', 'ZAMAZENTA', 'INDEEDEE', 'EISCUE']
+RegionalForms = ['RATTATA', 'RATICATE', 'RAICHU', 'SANDSHREW', 'SANDSLASH', 'VULPIX', 'NINETALES', 'DIGLETT', 'DUGTRIO', 'MEOWTH',
+ 'PERSIAN', 'GEODUDE', 'GRAVELER', 'GOLEM', 'GRIMER', 'MUK', 'EXEGGUTOR', 'MAROWAK', 'PONYTA', 'RAPIDASH', 'SLOWPOKE', 'WEEZING',
+ 'CORSOLA', 'ZIGZAGOON', 'LINOONE', 'DARUMAKA', 'YAMASK', 'STUNFISK']
+RegionNames = ['Alola', 'Galar']
+AbilityBreakers = ['Basic', 'Adv', 'High', 'Evolution:', 'Capability']
+ExtraSpecialNames = ['MR.-MIME', 'DARMANITAN-Galar,']
 NonOtherCapabilities = ['Overland', 'Sky', 'Swim', 'Levitate', 'Burrow', 'Jump', 'Power', 'Naturewalk']
 Naturewalks = ['Grassland', 'Desert', 'Forest', 'Urban', 'Wetlands', 'Cave', 'Ocean', 'Mountain', 'Tundra']
 SpeciesWithWeirdStats = ['PUMPKABOO', 'GOURGEIST']
@@ -11,6 +18,10 @@ SpeciesWithWeirdStats = ['PUMPKABOO', 'GOURGEIST']
 class PokemonLoop:
     SpeciesName = ''
     InfoArray = []
+    Type = []
+    Basic = []
+    Advanced = []
+    High = []
     BaseStats = baseStats.BaseStats
     CapaList = capabilities.Capabilities
 
@@ -22,6 +33,14 @@ class PokemonLoop:
             self.SpeciesName = "MIME-JR."
         else:
             self.SpeciesName = Data[0] + '-' + Data[1]
+        
+        if self.SpeciesName in ExtraSpecialNames and Data[2] in RegionNames:
+            self.SpeciesName += '-' + Data[2]
+        elif self.SpeciesName in ExtraSpecialNames and self.SpeciesName.find(',') > 0:
+            self.SpeciesName = self.SpeciesName.replace(',', '') + '-' + Data[2]
+        elif self.SpeciesName in RegionalForms and Data[1] in RegionNames:
+            self.SpeciesName += '-' + Data[1]
+
         self.InfoArray = Data
 
     def resetAll(self):
@@ -31,6 +50,10 @@ class PokemonLoop:
         self.BaseStats.SAT = 1
         self.BaseStats.SDE = 1
         self.BaseStats.SPD = 1
+        self.Type = []
+        self.Basic = []
+        self.Advanced = []
+        self.High = []
         self.CapaList.Overland = 0
         self.CapaList.Sky = 0
         self.CapaList.Swim = 0
@@ -45,11 +68,56 @@ class PokemonLoop:
 
     def setAll(self):
         self.setBaseStats()
+        self.setBasicInformation()
         self.setCapabilities()
 
-    def setBaseStats(self):
-        print(self.SpeciesName)
+    def setBasicInformation(self):
+        i = 0
+        while self.InfoArray[i] != "Basic" and self.InfoArray[i+1] != "Information":
+            i+=1
 
+        while self.InfoArray[i] != "Size":
+            if self.InfoArray[i] == "Type:":
+                self.Type.append(self.InfoArray[i+1])
+                if self.InfoArray[i+2] == '/':
+                    self.Type.append(self.InfoArray[i+3])
+
+            if self.InfoArray[i] == "Basic" and self.InfoArray[i+1] == "Ability":
+                fullAbilityName = self.InfoArray[i+3]
+                j = 1
+                while self.InfoArray[i+3+j] not in AbilityBreakers:
+                    fullAbilityName += ' ' + self.InfoArray[i+3+j]
+                    j+= 1
+                self.Basic.append(fullAbilityName)
+            
+            if self.InfoArray[i] == "Adv" and self.InfoArray[i+1] == "Ability":
+                fullAbilityName = self.InfoArray[i+3]
+                j = 1
+                while self.InfoArray[i+3+j] not in AbilityBreakers:
+                    fullAbilityName += ' ' + self.InfoArray[i+3+j]
+                    j+= 1
+                self.Advanced.append(fullAbilityName)
+
+            if self.InfoArray[i] == "High" and (self.InfoArray[i+1] == "Ability" or self.InfoArray[i+1] == "Ability:"):
+                j = 1
+                if self.InfoArray[i+2] == "1:" or self.InfoArray[i+2] == "2:" or self.InfoArray[i+2] == "3:":
+                    fullAbilityName = self.InfoArray[i+3]
+                    while self.InfoArray[i+3+j] not in AbilityBreakers:
+                        fullAbilityName += ' ' + self.InfoArray[i+3+j]
+                        j+= 1
+                    self.High.append(fullAbilityName)
+                else:
+                    fullAbilityName = self.InfoArray[i+2]
+                    while self.InfoArray[i+2+j] not in AbilityBreakers:
+                        fullAbilityName += ' ' + self.InfoArray[i+2+j]
+                        j+= 1
+                    self.High.append(fullAbilityName)
+            i+=1
+        print(self.Basic)
+        print(self.Advanced)
+        print(self.High)
+
+    def setBaseStats(self):
         if self.SpeciesName in SpeciesWithWeirdStats:
             return
 
@@ -82,7 +150,7 @@ class PokemonLoop:
                     self.CapaList.Overland = int(self.InfoArray[i+1][:-1])
                 elif self.InfoArray[i] == "Sky":
                     if self.InfoArray[i+1] == "Forme,":
-                        print('Shaymin please stop breaking my code please')
+                        print('Shaymin please stop breaking my code')
                     elif self.InfoArray[i+1].find(',') > -1:
                         self.CapaList.Sky = int(self.InfoArray[i+1][self.InfoArray[i+1].find(',')-1])
                     else:
@@ -144,6 +212,11 @@ class PokemonLoop:
         Stats['Special Defense'] = self.BaseStats.SDE
         Stats['Speed'] = self.BaseStats.SPD
 
+        Abilities = {}
+        Abilities['Basic'] = self.Basic
+        Abilities['Advanced'] = self.Advanced
+        Abilities['High'] = self.High
+
         Capabilities = {}
         Capabilities['Overland'] = self.CapaList.Overland
         Capabilities['Sky'] = self.CapaList.Sky
@@ -156,10 +229,11 @@ class PokemonLoop:
         Capabilities['Naturewalk'] = self.CapaList.Naturewalk
         Capabilities['Other'] = self.CapaList.Other
 
-        species[self.SpeciesName] = []
-        species[self.SpeciesName].append({
+        species = []
+        species.append({
             '_id': self.SpeciesName,
             'Base Stats': Stats,
+            'Abilities': Abilities,
             'Capabilities': Capabilities
         })
 
