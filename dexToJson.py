@@ -43,3 +43,5 @@ for line in rawTxt:
 
 rawTxt.close()
 finalTxt.close()
+
+print('Done!')
