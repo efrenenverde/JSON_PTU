@@ -38,3 +38,4 @@ class Capabilities:
         Capabilities['Power'] = self.Power
         Capabilities['Naturewalk'] = self.Naturewalk
         Capabilities['Other'] = self.Other
+        return Capabilities

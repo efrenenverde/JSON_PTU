@@ -2,6 +2,7 @@ import json
 from models import capabilities
 from models import baseStats
 from models import speciesSkills
+from models import evolution
 
 SpecialNames = ['TYPE:', 'GIRATINA', 'MR.', 'MIME', 'HOOPA', 'TAPU', 'ZYGARDE', 'MELOETTA', 'KYUREM', 'TORNADUS', 'LANDORUS',
                 'THUNDURUS', 'SHAYMIN', 'ROTOM', 'DEOXYS', 'WORMADAM', 'DARMANITAN', 'LYCANROC', 'WISHIWASHI', 'MINIOR', 'NECROZMA', 'NIDORAN',
@@ -30,6 +31,7 @@ class PokemonLoop:
     BaseStats = baseStats.BaseStats()
     CapaList = capabilities.Capabilities()
     SpeciesSkills = speciesSkills.SpeciesSkills()
+    Evolution = []
 
     def __init__(self, Data):
         if Data[0] not in SpecialNames:
@@ -57,6 +59,7 @@ class PokemonLoop:
         self.High = []
         self.CapaList = capabilities.Capabilities()
         self.SpeciesSkills = speciesSkills.SpeciesSkills()
+        self.Evolution = []
 
     def setAll(self):
         self.setBaseStats()
@@ -64,6 +67,7 @@ class PokemonLoop:
         self.setCapabilities()
         self.setSkillList()
 
+    # TODO: Review Evolution structure
     def setBasicInformation(self):
         i = 0
         while self.InfoArray[i] != "Basic" and self.InfoArray[i+1] != "Information":
@@ -106,7 +110,23 @@ class PokemonLoop:
                         j += 1
                     self.High.append(fullAbilityName)
             i += 1
-
+        while self.InfoArray[i] != "Size" and self.SpeciesName != "ROTOM-Appliance":
+            if self.InfoArray[i] == "1" or self.InfoArray[i] == "2" or self.InfoArray[i] == "3":
+                evolutionEntry = evolution.Evolution()
+                evolutionEntry.Stage = int(self.InfoArray[i])
+                evolutionEntry.Name = self.InfoArray[i+2]
+                if self.InfoArray[i+3] == "Minimum":
+                    if self.InfoArray[i+4].find(',') > 0 or self.InfoArray[i+4].find(';') > 0:
+                        evolutionEntry.MinLevel = int(self.InfoArray[i+4][:-1])
+                        evolutionEntry.Extras = self.InfoArray[i+5]
+                    else:
+                        evolutionEntry.MinLevel = int(self.InfoArray[i+4])
+                evolutionEntry.toString()
+                self.Evolution.append(evolutionEntry.toArray())
+                i+=1
+            else:
+                i+=1
+                
     def setBaseStats(self):
         if self.SpeciesName in SpeciesWithWeirdStats:
             return
@@ -208,8 +228,6 @@ class PokemonLoop:
         while self.InfoArray[i] != 'Athl':
             i += 1
 
-        print(self.SpeciesName)
-
         if self.SpeciesName == "ALTARIA":
             self.SpeciesSkills.Athletics.Dice = 4
             self.SpeciesSkills.Athletics.Mod = 2
@@ -272,6 +290,7 @@ class PokemonLoop:
             '_id': self.SpeciesName,
             'Base Stats': self.BaseStats.declareJson(),
             'Abilities': Abilities,
+            'Evolution': self.Evolution,
             'Capabilities': self.CapaList.declareJson(),
             'Skills': self.SpeciesSkills.declareJson()
         })
