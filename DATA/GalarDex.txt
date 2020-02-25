@@ -6766,6 +6766,7 @@ Evolution:
 
 Size Information
 Height: 7’ 7 / 2.3m (Large)
+Weight: 418.9 lbs / 190kg (5)
 
 Capability List
 
@@ -6859,6 +6860,7 @@ Evolution:
 
 Size Information
 Height: 6’ 7 / 2m (Large)
+Weight: 385.8 lbs / 175kg (5)
 
 Capability List
 

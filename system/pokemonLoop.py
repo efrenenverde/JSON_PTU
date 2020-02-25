@@ -32,6 +32,9 @@ class PokemonLoop:
     CapaList = capabilities.Capabilities()
     SpeciesSkills = speciesSkills.SpeciesSkills()
     Evolution = []
+    HeightNum = 0
+    HeightClass = ''
+    WeightNum = 0
 
     def __init__(self, Data):
         if Data[0] not in SpecialNames:
@@ -60,14 +63,19 @@ class PokemonLoop:
         self.CapaList = capabilities.Capabilities()
         self.SpeciesSkills = speciesSkills.SpeciesSkills()
         self.Evolution = []
+        self.HeightNum = 0
+        self.HeightClass = ''
+        self.WeightNum = 0
 
     def setAll(self):
         self.setBaseStats()
         self.setBasicInformation()
         self.setCapabilities()
         self.setSkillList()
+        self.setSizeBreedingDiet()
 
     # TODO: Review Evolution structure
+    # TODO: Fix names with multiple words
     def setBasicInformation(self):
         i = 0
         while self.InfoArray[i] != "Basic" and self.InfoArray[i+1] != "Information":
@@ -115,13 +123,15 @@ class PokemonLoop:
                 evolutionEntry = evolution.Evolution()
                 evolutionEntry.Stage = int(self.InfoArray[i])
                 evolutionEntry.Name = self.InfoArray[i+2]
+                if evolutionEntry.Name.upper() in SpecialNames:
+                    evolutionEntry.Name += ' ' + self.InfoArray[i+3]
+                    i+=1
                 if self.InfoArray[i+3] == "Minimum":
                     if self.InfoArray[i+4].find(',') > 0 or self.InfoArray[i+4].find(';') > 0:
                         evolutionEntry.MinLevel = int(self.InfoArray[i+4][:-1])
                         evolutionEntry.Extras = self.InfoArray[i+5]
                     else:
                         evolutionEntry.MinLevel = int(self.InfoArray[i+4])
-                evolutionEntry.toString()
                 self.Evolution.append(evolutionEntry.toArray())
                 i+=1
             else:
@@ -223,6 +233,35 @@ class PokemonLoop:
             mod = int(targetString[targetString.find('+')+1])
         return [dice, mod]
 
+    def setSizeBreedingDiet(self):
+        i = 0
+
+        if self.SpeciesName == "ROTOM-Appliance":
+            return
+
+        while self.InfoArray[i] != 'Height:':
+            i += 1
+
+        if self.SpeciesName in SpeciesWithWeirdStats:
+            return
+
+        try:
+            self.HeightNum = float(self.InfoArray[i+4][:-1])
+            self.HeightClass = self.InfoArray[i+5][1:-1]
+        except:
+            print(self.SpeciesName + ' messed up the size part')
+            print('Info: ' + str(self.InfoArray[i:i+13]) )
+
+        try:
+            while self.InfoArray[i] != 'Weight:':
+                i += 1
+        
+            self.CapaList.WeightClass = self.InfoArray[i+5][1:-1]
+            self.WeightNum = float(self.InfoArray[i+4][:-2])
+        except:
+            print(self.SpeciesName + ' messed up the weight part')
+            print('Info: ' + str(self.InfoArray[i:i+13]) )
+
     def setSkillList(self):
         i = 0
         while self.InfoArray[i] != 'Athl':
@@ -291,6 +330,9 @@ class PokemonLoop:
             'Base Stats': self.BaseStats.declareJson(),
             'Abilities': Abilities,
             'Evolution': self.Evolution,
+            'Height': self.HeightNum,
+            'Size Class': self.HeightClass,
+            'Weight': self.WeightNum,
             'Capabilities': self.CapaList.declareJson(),
             'Skills': self.SpeciesSkills.declareJson()
         })

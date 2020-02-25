@@ -36,6 +36,7 @@ class Capabilities:
         Capabilities['JumpH'] = self.JumpH
         Capabilities['JumpL'] = self.JumpL
         Capabilities['Power'] = self.Power
+        Capabilities['WeightClass'] = self.WeightClass
         Capabilities['Naturewalk'] = self.Naturewalk
         Capabilities['Other'] = self.Other
         return Capabilities
