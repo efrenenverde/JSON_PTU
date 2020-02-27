@@ -19,6 +19,7 @@ Naturewalks = ['Grassland', 'Desert', 'Forest', 'Urban',
                'Wetlands', 'Cave', 'Ocean', 'Mountain', 'Tundra']
 SpeciesWithWeirdStats = ['PUMPKABOO', 'GOURGEIST']
 SkillNames = ['Athl', 'Acro', 'Combat', 'Stealth', 'Percep', 'Focus']
+LevelUpListBreakers = ['TM', 'Type:', 'Tutor', 'Egg', 'Basic']
 
 
 class PokemonLoop:
@@ -35,6 +36,7 @@ class PokemonLoop:
     HeightNum = 0
     HeightClass = ''
     WeightNum = 0
+    LevelUpMoveList = []
 
     def __init__(self, Data):
         if Data[0] not in SpecialNames:
@@ -66,6 +68,7 @@ class PokemonLoop:
         self.HeightNum = 0
         self.HeightClass = ''
         self.WeightNum = 0
+        self.LevelUpMoveList = []
 
     def setAll(self):
         self.setBaseStats()
@@ -73,6 +76,8 @@ class PokemonLoop:
         self.setCapabilities()
         self.setSkillList()
         self.setSize()
+        self.setSize()
+        self.setLevelUpList()
 
     # TODO: Review Evolution structure
     # TODO: Fix names with multiple words
@@ -86,6 +91,8 @@ class PokemonLoop:
                 self.Type.append(self.InfoArray[i+1])
                 if self.InfoArray[i+2] == '/':
                     self.Type.append(self.InfoArray[i+3])
+                else:
+                    self.Type.append('Null')
 
             if self.InfoArray[i] == "Basic" and self.InfoArray[i+1] == "Ability":
                 fullAbilityName = self.InfoArray[i+3]
@@ -118,6 +125,7 @@ class PokemonLoop:
                         j += 1
                     self.High.append(fullAbilityName)
             i += 1
+
         while self.InfoArray[i] != "Size" and self.SpeciesName != "ROTOM-Appliance":
             if self.InfoArray[i] == "1" or self.InfoArray[i] == "2" or self.InfoArray[i] == "3":
                 evolutionEntry = evolution.Evolution()
@@ -132,11 +140,17 @@ class PokemonLoop:
                         evolutionEntry.Extras = self.InfoArray[i+5]
                     else:
                         evolutionEntry.MinLevel = int(self.InfoArray[i+4])
+                elif (self.InfoArray[i+3] == "(A)" or self.InfoArray[i+3] == "(G)") and self.InfoArray[i+4] == "Minimum":
+                    if self.InfoArray[i+5].find(',') > 0 or self.InfoArray[i+5].find(';') > 0:
+                        evolutionEntry.MinLevel = int(self.InfoArray[i+5][:-1])
+                        evolutionEntry.Extras = self.InfoArray[i+6]
+                    else:
+                        evolutionEntry.MinLevel = int(self.InfoArray[i+5])
                 self.Evolution.append(evolutionEntry.toArray())
-                i+=1
+                i += 1
             else:
-                i+=1
-                
+                i += 1
+
     def setBaseStats(self):
         if self.SpeciesName in SpeciesWithWeirdStats:
             return
@@ -173,7 +187,7 @@ class PokemonLoop:
                         print('Shaymin please stop breaking my code')
                     elif self.InfoArray[i+1].find(',') > -1:
                         self.CapaList.Sky = int(
-                            self.InfoArray[i+1][self.InfoArray[i+1].find(',')-1])
+                            self.InfoArray[i+1][0:-1])
                     else:
                         self.CapaList.Sky = int(self.InfoArray[i+1])
                 elif self.InfoArray[i] == "Swim":
@@ -324,6 +338,38 @@ class PokemonLoop:
             self.SpeciesSkills.Focus.Mod = self.extractSkillInfo(
                 self.InfoArray[i+11])[1]
 
+    def setLevelUpList(self):
+        i = 0
+
+        if self.SpeciesName == "ROTOM-Appliance":
+            return
+
+        while self.InfoArray[i] != "Level" and self.InfoArray[i+1] != "Up":
+            i += 1
+
+        # Positioned on -Level- Up Move List, next line puts us on
+        i += 4
+
+        while self.InfoArray[i] not in LevelUpListBreakers:
+            try:
+                level = int(self.InfoArray[i])
+            except:
+                level = "Evo"
+            i += 1
+            fullName = ''
+            while self.InfoArray[i] != '-':
+                fullName += self.InfoArray[i]
+                if self.InfoArray[i+1] != '-':
+                    fullName += ' '
+                i += 1
+
+            self.LevelUpMoveList.append({
+                "Level": level,
+                "Move": fullName
+            })
+
+            i += 2
+
     def toJson(self):
         species = {}
 
@@ -335,6 +381,7 @@ class PokemonLoop:
         species = []
         species.append({
             '_id': self.SpeciesName,
+            'Type': self.Type,
             'Base Stats': self.BaseStats.declareJson(),
             'Abilities': Abilities,
             'Evolution': self.Evolution,
@@ -342,6 +389,7 @@ class PokemonLoop:
             'Size Class': self.HeightClass,
             'Weight': self.WeightNum,
             'Capabilities': self.CapaList.declareJson(),
+            'Level Up Move List': self.LevelUpMoveList,
             'Skills': self.SpeciesSkills.declareJson()
         })
 
