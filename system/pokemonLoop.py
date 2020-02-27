@@ -72,7 +72,7 @@ class PokemonLoop:
         self.setBasicInformation()
         self.setCapabilities()
         self.setSkillList()
-        self.setSizeBreedingDiet()
+        self.setSize()
 
     # TODO: Review Evolution structure
     # TODO: Fix names with multiple words
@@ -233,17 +233,14 @@ class PokemonLoop:
             mod = int(targetString[targetString.find('+')+1])
         return [dice, mod]
 
-    def setSizeBreedingDiet(self):
+    def setSize(self):
         i = 0
 
-        if self.SpeciesName == "ROTOM-Appliance":
+        if self.SpeciesName == "ROTOM-Appliance" or self.SpeciesName in SpeciesWithWeirdStats:
             return
 
         while self.InfoArray[i] != 'Height:':
             i += 1
-
-        if self.SpeciesName in SpeciesWithWeirdStats:
-            return
 
         try:
             self.HeightNum = float(self.InfoArray[i+4][:-1])
@@ -261,6 +258,17 @@ class PokemonLoop:
         except:
             print(self.SpeciesName + ' messed up the weight part')
             print('Info: ' + str(self.InfoArray[i:i+13]) )
+
+    def setBreedingInfo(self):
+        i = 0
+
+        if self.SpeciesName == "ROTOM-Appliance" or self.SpeciesName in SpeciesWithWeirdStats:
+            return
+
+        while self.InfoArray[i] != 'Ratio:':
+            i += 1
+
+        
 
     def setSkillList(self):
         i = 0
