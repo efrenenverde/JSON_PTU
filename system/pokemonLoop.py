@@ -66,6 +66,7 @@ class PokemonLoop:
         self.setBasicInformation()
         self.setCapabilities()
         self.setSkillList()
+        self.setSizeBreedingDiet()
 
     # TODO: Review Evolution structure
     def setBasicInformation(self):
@@ -78,6 +79,8 @@ class PokemonLoop:
                 self.Type.append(self.InfoArray[i+1])
                 if self.InfoArray[i+2] == '/':
                     self.Type.append(self.InfoArray[i+3])
+                else:
+                    self.Type.append('Null')
 
             if self.InfoArray[i] == "Basic" and self.InfoArray[i+1] == "Ability":
                 fullAbilityName = self.InfoArray[i+3]
@@ -110,6 +113,7 @@ class PokemonLoop:
                         j += 1
                     self.High.append(fullAbilityName)
             i += 1
+        
         while self.InfoArray[i] != "Size" and self.SpeciesName != "ROTOM-Appliance":
             if self.InfoArray[i] == "1" or self.InfoArray[i] == "2" or self.InfoArray[i] == "3":
                 evolutionEntry = evolution.Evolution()
@@ -121,12 +125,18 @@ class PokemonLoop:
                         evolutionEntry.Extras = self.InfoArray[i+5]
                     else:
                         evolutionEntry.MinLevel = int(self.InfoArray[i+4])
-                evolutionEntry.toString()
+                elif (self.InfoArray[i+3] == "(A)" or self.InfoArray[i+3] == "(G)") and self.InfoArray[i+4] == "Minimum":
+                    print(self.SpeciesName)
+                    if self.InfoArray[i+5].find(',') > 0 or self.InfoArray[i+5].find(';') > 0:
+                        evolutionEntry.MinLevel = int(self.InfoArray[i+5][:-1])
+                        evolutionEntry.Extras = self.InfoArray[i+6]
+                    else:
+                        evolutionEntry.MinLevel = int(self.InfoArray[i+5])
                 self.Evolution.append(evolutionEntry.toArray())
                 i+=1
             else:
                 i+=1
-                
+            
     def setBaseStats(self):
         if self.SpeciesName in SpeciesWithWeirdStats:
             return
@@ -223,6 +233,11 @@ class PokemonLoop:
             mod = int(targetString[targetString.find('+')+1])
         return [dice, mod]
 
+    def setSizeBreedingDiet(self):
+        i = 0
+        while self.InfoArray[i] != "Size" and self.InfoArray[i+1] != "Information":
+            i+=1
+
     def setSkillList(self):
         i = 0
         while self.InfoArray[i] != 'Athl':
@@ -288,6 +303,7 @@ class PokemonLoop:
         species = []
         species.append({
             '_id': self.SpeciesName,
+            'Type': self.Type,
             'Base Stats': self.BaseStats.declareJson(),
             'Abilities': Abilities,
             'Evolution': self.Evolution,
