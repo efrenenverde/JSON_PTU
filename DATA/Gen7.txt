@@ -4553,11 +4553,6 @@ Type: Fire
 
 Basic Information
 
-TM Move List
-
-01 Work Up, 05 Roar, 06 Toxic, 08 Bulk Up, 10
-
-
 Basic Ability 1: Intimidate
 Basic Ability 2: Blaze
 
@@ -4589,6 +4584,10 @@ Average Hatch Rate: 10 Days
 Diet: Carnivore
 
 Habitat: Forest, Grassland, Urban
+
+TM Move List
+
+01 Work Up, 05 Roar, 06 Toxic, 08 Bulk Up, 10
 
 Hidden Power, 11 Sunny Day, 12 Taunt, 17 Protect,
 
@@ -5250,10 +5249,6 @@ Type: Water
 
 Basic Information
 
-TM Move List
-
-01 Work Up, 02 Dragon Claw, 06 Toxic, 07 Hail, 10
-
 
 Basic Ability 1: Hyper Cutter
 
@@ -5286,6 +5281,10 @@ Average Hatch Rate: 10 Days
 Diet: Carnivore
 
 Habitat: Beach, Freshwater, Marsh
+
+TM Move List
+
+01 Work Up, 02 Dragon Claw, 06 Toxic, 07 Hail, 10
 
 Hidden Power, 13 Ice Beam, 14 Blizzard, 17 Protect,
 
@@ -6969,11 +6968,6 @@ Type: Water
 
 Basic Information
 
-TM Move List
-
-01 Work Up, 06 Toxic, 07 Hail, 10 Hidden Power, 13
-
-
 Basic Ability 1: Swift Swim
 
 Basic Ability 2: Torrent
@@ -7002,6 +6996,10 @@ Average Hatch Rate: 10 Days
 
 Diet: Herbivore
 Habitat: Beach, Ocean
+
+TM Move List
+
+01 Work Up, 06 Toxic, 07 Hail, 10 Hidden Power, 13
 
 Ice Beam, 14 Blizzard, 17 Protect, 18 Rain Dance, 21
 
@@ -9457,11 +9455,6 @@ Type: Dragon
 
 Basic Information
 
-TM Move List
-
-02 Dragon Claw, 05 Roar, 06 Toxic, 10 Hidden
-
-
 Basic Ability 1: Rivalry
 
 Basic Ability 2: Mold Breaker
@@ -9493,6 +9486,10 @@ Average Hatch Rate: 25 Days
 Diet: Omnivore
 
 Habitat: Cave, Mountain
+
+TM Move List
+
+02 Dragon Claw, 05 Roar, 06 Toxic, 10 Hidden
 
 Power, 11 Sunny Day, 12 Taunt, 17 Protect, 18 Rain
 
@@ -9928,11 +9925,6 @@ Type: Electric
 
 Basic Information
 
-TM Move List
-
-06 Toxic, 10 Hidden Power, 16 Light Screen, 17
-
-
 Basic Ability 1: Static
 
 Basic Ability 2: Cute Charm
@@ -9965,6 +9957,10 @@ Egg Group: Field / Fairy
 Diet: Herbivore
 
 Habitat: Forest, Grassland, Urban
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 16 Light Screen, 17
 
 Protect, 18 Rain Dance, 21 Frustration, 24
 
@@ -10053,11 +10049,6 @@ Type: Electric
 
 Basic Information
 
-TM Move List
-
-06 Toxic, 10 Hidden Power, 15 Hyper Beam, 16 Light
-
-
 Basic Ability 1: Static
 
 Basic Ability 2: Motor Drive
@@ -10087,6 +10078,10 @@ Egg Group: Field / Fairy
 
 Diet: Herbivore
 Habitat: Forest
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 15 Hyper Beam, 16 Light
 
 Screen, 17 Protect, 18 Rain Dance, 21 Frustration, 24
 
@@ -13240,11 +13235,6 @@ Type: Fighting
 
 Basic Information
 
-TM Move List
-
-01 Work Up, 06 Toxic, 08 Bulk Up, 10 Hidden Power,
-
-
 Basic Ability 1: Guts
 
 Basic Ability 2: Steadfast
@@ -13273,6 +13263,10 @@ Egg Group: Humanshape
 
 Diet: Omnivore
 Habitat: Mountain
+
+TM Move List
+
+01 Work Up, 06 Toxic, 08 Bulk Up, 10 Hidden Power,
 
 11 Sunny Day, 15 Hyper Beam, 16 Light Screen, 17
 
@@ -14736,9 +14730,7 @@ Type: Ghost
 
 Basic Information
 
-TM Move List
 
-04 Calm Mind, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Levitate
@@ -14772,6 +14764,10 @@ Average Hatch Rate: 13 Days
 Diet: Nullivore
 
 Habitat: Cave, Forest, Mountain
+
+TM Move List
+
+04 Calm Mind, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 12 Taunt, 13 Ice Beam, 14 Blizzard, 17 Protect,
 
@@ -15781,9 +15777,7 @@ Type: Grass
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Sol Veil
@@ -15816,6 +15810,10 @@ Egg Group: Plant
 Diet: Phototroph
 
 Habitat: Forest, Grassland, Marsh, Rainforest
+
+TM Move List
+
+06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 Day, 15 Hyper Beam, 17 Protect, 20 Safeguard, 21
 
@@ -25183,9 +25181,7 @@ Type: Psychic
 
 Basic Information
 
-TM Move List
 
-03 Psyshock, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 
 Basic Ability 1: Overcoat
@@ -25217,6 +25213,10 @@ Average Hatch Rate: 10 Days
 
 Diet: Herbivore
 Habitat: Cave, Forest
+
+TM Move List
+
+03 Psyshock, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 Power, 16 Light Screen, 17 Protect, 18 Rain Dance,
 
@@ -25419,9 +25419,6 @@ Type: Psychic
 
 Basic Information
 
-TM Move List
-
-03 Psyshock, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 
 Basic Ability 1: Magic Guard
@@ -25453,6 +25450,11 @@ Egg Group: Indeterminate
 
 Diet: Omnivore
 Habitat: Cave, Forest
+
+
+TM Move List
+
+03 Psyshock, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 Power, 15 Hyper Beam, 16 Light Screen, 17 Protect,
 
@@ -30057,9 +30059,7 @@ Type: Bug / Flying
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 10 Hidden Power, 11 Sunny Day, 17
 
 
 Basic Ability 1: Speed Boost
@@ -30091,6 +30091,10 @@ Average Hatch Rate: 10 Days
 
 Diet: Carnivore
 Habitat: Forest, Marsh
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 11 Sunny Day, 17
 
 Protect, 19 Roost, 21 Frustration, 22 Solar Beam, 27
 
@@ -32331,11 +32335,6 @@ Type: Bug
 
 Basic Information
 
-TM Move List
-
-06 Toxic, 09 Venoshock, 10 Hidden Power, 17
-
-
 Basic Ability 1: Shell Armor
 
 Adv Ability 1: Overcoat
@@ -32364,6 +32363,10 @@ Average Hatch Rate: 10 Days
 
 Diet: Herbivore
 Habitat: Forest, Marsh
+
+TM Move List
+
+06 Toxic, 09 Venoshock, 10 Hidden Power, 17
 
 Protect, 18 Rain Dance, 21 Frustration, 27 Return, 28
 
@@ -35039,9 +35042,7 @@ Type: Dark / Steel
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 10 Hidden Power, 12 Taunt, 17 Protect, 18
 
 
 Basic Ability 1: Defiant
@@ -35072,6 +35073,10 @@ Average Hatch Rate: 10 Days
 Diet: Omnivore
 
 Habitat: Cave, Mountain
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 12 Taunt, 17 Protect, 18
 
 Rain Dance, 21 Frustration, 27 Return, 31 Brick
 
@@ -36874,9 +36879,7 @@ Type: Fairy
 
 Basic Information
 
-TM Move List
 
-04 Calm Mind, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Aroma Veil
@@ -36909,6 +36912,10 @@ Average Hatch Rate: 10 Days
 Diet: Herbivore
 
 Habitat: Grassland, Forest
+
+TM Move List
+
+04 Calm Mind, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 16 Light Screen, 17 Protect, 18 Rain Dance, 21
 
@@ -36991,9 +36998,7 @@ Type: Fairy
 
 Basic Information
 
-TM Move List
 
-03 Psyshock, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 
 Basic Ability 1: Aroma Veil
@@ -37024,6 +37029,10 @@ Egg Group: Fairy
 Diet: Herbivore
 
 Habitat: Grassland, Forest
+
+TM Move List
+
+03 Psyshock, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 Power, 11 Sunny Day, 15 Hyper Beam, 16 Light
 
@@ -37105,9 +37114,7 @@ Type: Fairy
 
 Basic Information
 
-TM Move List
 
-04 Calm Mind, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Sweet Veil
@@ -37138,6 +37145,10 @@ Average Hatch Rate: 10 Days
 
 Diet: Herbivore
 Habitat: Grassland
+
+TM Move List
+
+04 Calm Mind, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 16 Light Screen, 17 Protect, 18 Rain Dance, 20
 
@@ -38732,9 +38743,6 @@ Type: Fighting
 
 Basic Information
 
-TM Move List
-
-01 Work Up, 04 Calm Mind, 06 Toxic, 08 Bulk Up, 10
 
 
 Basic Ability 1: Inner Focus
@@ -38766,6 +38774,11 @@ Average Hatch Rate: 10 Days
 Diet: Omnivore
 
 Habitat: Cave, Mountain
+
+
+TM Move List
+
+01 Work Up, 04 Calm Mind, 06 Toxic, 08 Bulk Up, 10
 
 Hidden Power, 11 Sunny Day, 12 Taunt, 17 Protect,
 
@@ -40121,9 +40134,7 @@ Type: Fire
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 10 Hidden Power, 11 Sunny Day, 16 Light
 
 
 Basic Ability 1: Magma Armor
@@ -40154,6 +40165,10 @@ Average Hatch Rate: 10 Days
 Diet: Terravore
 
 Habitat: Cave, Mountain
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 11 Sunny Day, 16 Light
 
 Screen, 17 Protect, 21 Frustration, 27 Return, 32
 
@@ -40593,9 +40608,7 @@ Type: Fire
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Decoy
@@ -40627,6 +40640,10 @@ Average Hatch Rate: 10 Days
 Diet: Omnivore
 
 Habitat: Forest, Rainforest
+
+TM Move List
+
+01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 12 Taunt, 17 Protect, 21 Frustration, 22 Solar
 
@@ -40829,9 +40846,7 @@ Type: Fire
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 05 Roar, 06 Toxic, 10 Hidden Power, 11
 
 
 Basic Ability 1: Hustle
@@ -40864,6 +40879,9 @@ Diet: Herbivore
 
 Habitat: Cave, Desert, Mountain
 
+TM Move List
+
+01 Work Up, 05 Roar, 06 Toxic, 10 Hidden Power, 11
 Sunny Day, 12 Taunt, 17 Protect, 21 Frustration, 22
 
 Solar Beam, 27 Return, 31 Brick Break, 32 Double
@@ -42356,9 +42374,7 @@ Type: Ghost
 
 Basic Information
 
-TM Move List
 
-04 Calm Mind, 06 Toxic, 10 Hidden Power, 17
 
 
 Basic Ability 1: Mummy
@@ -42389,6 +42405,10 @@ Average Hatch Rate: 10 Days
 
 Diet: Terravore
 Habitat: Desert
+
+TM Move List
+
+04 Calm Mind, 06 Toxic, 10 Hidden Power, 17
 
 Protect, 18 Rain Dance, 20 Safeguard, 21 Frustration,
 
@@ -43857,9 +43877,7 @@ Type: Grass
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 10 Hidden Power, 11 Sunny Day, 16 Light
 
 
 Basic Ability 1: Sun Blanket
@@ -43891,6 +43909,10 @@ Average Hatch Rate: 10 Days
 Diet: Phototroph
 
 Habitat: Forest, Grassland
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 11 Sunny Day, 16 Light
 
 Screen, 17 Protect, 20 Safeguard, 21 Frustration, 22
 
@@ -44964,9 +44986,7 @@ Type: Grass
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Decoy
@@ -44998,6 +45018,10 @@ Average Hatch Rate: 10 Days
 Diet: Omnivore
 
 Habitat: Forest, Rainforest
+
+TM Move List
+
+01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 12 Taunt, 17 Protect, 21 Frustration, 22 Solar
 
@@ -45418,9 +45442,7 @@ Type: Grass
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 10 Hidden Power, 11 Sunny Day, 17
 
 
 Basic Ability 1: Own Tempo
@@ -45452,6 +45474,10 @@ Average Hatch Rate: 10 Days
 Diet: Phototroph
 
 Habitat: Forest, Rainforest
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 11 Sunny Day, 17
 
 Protect, 20 Safeguard, 21 Frustration, 22 Solar
 
@@ -45533,9 +45559,6 @@ Type: Grass
 
 Basic Information
 
-TM Move List
-
-06 Toxic, 10 Hidden Power, 11 Sunny Day, 15 Hyper
 
 
 Basic Ability 1: Aroma Veil
@@ -45565,6 +45588,11 @@ Egg Group: Plant
 Diet: Phototroph
 
 Habitat: Forest, Rainforest
+
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 11 Sunny Day, 15 Hyper
 
 Beam, 16 Light Screen, 17 Protect, 20 Safeguard, 21
 
@@ -46080,9 +46108,7 @@ Type: Grass
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 05 Roar, 06 Toxic, 08 Bulk Up, 10
 
 
 Basic Ability 1: Grass Pelt
@@ -46114,6 +46140,10 @@ Average Hatch Rate: 10 Days
 Diet: Herbivore
 
 Habitat: Forest, Grassland, Urban
+
+TM Move List
+
+01 Work Up, 05 Roar, 06 Toxic, 08 Bulk Up, 10
 
 Hidden Power, 11 Sunny Day, 17 Protect, 18 Rain
 
@@ -46195,9 +46225,7 @@ Type: Grass
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 05 Roar, 06 Toxic, 08 Bulk Up, 10
 
 
 Basic Ability 1: Grass Pelt
@@ -46227,6 +46255,10 @@ Egg Group: Field
 Diet: Herbivore
 
 Habitat: Forest, Grassland, Urban
+
+TM Move List
+
+01 Work Up, 05 Roar, 06 Toxic, 08 Bulk Up, 10
 
 Hidden Power, 11 Sunny Day, 15 Hyper Beam, 17
 
@@ -46857,9 +46889,7 @@ Type: Ground
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 10 Hidden Power, 11 Sunny Day, 15 Hyper
 
 
 Basic Ability 1: Pickup
@@ -46889,6 +46919,10 @@ Egg Group: Field
 Diet: Carnivore
 
 Habitat: Cave, Desert, Forest, Grassland
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 11 Sunny Day, 15 Hyper
 
 Beam, 17 Protect, 20 Safeguard, 21 Frustration, 26
 
@@ -48440,9 +48474,7 @@ Type: Ground
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 10 Hidden Power, 17 Protect, 21
 
 
 Basic Ability 1: Sand Rush
@@ -48473,6 +48505,10 @@ Average Hatch Rate: 10 Days
 Diet: Herbivore
 
 Habitat: Cave, Mountain
+
+TM Move List
+
+06 Toxic, 10 Hidden Power, 17 Protect, 21
 
 Frustration, 26 Earthquake, 27 Return, 31 Brick
 
@@ -49686,9 +49722,7 @@ Type: Ice
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 07 Hail, 10 Hidden Power, 13 Ice Beam, 14
 
 
 Basic Ability 1: Snow Cloak
@@ -49720,6 +49754,10 @@ Average Hatch Rate: 10 Days
 Diet: Omnivore
 
 Habitat: Cave, Taiga, Tundra
+
+TM Move List
+
+06 Toxic, 07 Hail, 10 Hidden Power, 13 Ice Beam, 14
 
 Blizzard, 17 Protect, 18 Rain Dance, 21 Frustration,
 
@@ -49800,9 +49838,7 @@ Type: Ice
 
 Basic Information
 
-TM Move List
 
-05 Roar, 06 Toxic, 07 Hail, 08 Bulk Up, 10 Hidden
 
 
 Basic Ability 1: Snow Cloak
@@ -49832,6 +49868,10 @@ Egg Group: Field
 Diet: Omnivore
 
 Habitat: Cave, Taiga, Tundra
+
+TM Move List
+
+05 Roar, 06 Toxic, 07 Hail, 08 Bulk Up, 10 Hidden
 
 Power, 12 Taunt, 13 Ice Beam, 14 Blizzard, 15
 
@@ -51271,9 +51311,6 @@ Type: Normal
 
 Basic Information
 
-TM Move List
-
-01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Thick Fat
@@ -51303,6 +51340,11 @@ Average Hatch Rate: 25 Days
 Diet: Omnivore
 
 Habitat: Forest, Mountain, Taiga, Urban
+
+
+TM Move List
+
+01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 13 Ice Beam, 14 Blizzard, 17 Protect, 18 Rain
 
@@ -51400,9 +51442,6 @@ Type: Normal
 
 Basic Information
 
-TM Move List
-
-01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Thick Fat
@@ -51432,6 +51471,11 @@ Egg Group: Monster
 Diet: Omnivore
 
 Habitat: Forest, Mountain, Taiga, Urban
+
+
+TM Move List
+
+01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 13 Ice Beam, 14 Blizzard, 15 Hyper Beam, 17
 
@@ -52449,9 +52493,7 @@ Type: Normal
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Pickup
@@ -52484,6 +52526,10 @@ Average Hatch Rate: 7 Days
 Diet: Herbivore
 
 Habitat: Forest, Grassland
+
+TM Move List
+
+01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 13 Ice Beam, 14 Blizzard, 17 Protect, 18 Rain
 
@@ -53588,9 +53634,7 @@ Type: Normal
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Cute Charm
@@ -53622,6 +53666,10 @@ Average Hatch Rate: 10 Days
 Diet: Herbivore
 
 Habitat: Forest, Grassland, Urban
+
+TM Move List
+
+01 Work Up, 06 Toxic, 10 Hidden Power, 11 Sunny
 
 Day, 13 Ice Beam, 17 Protect, 18 Rain Dance, 21
 
@@ -54416,9 +54464,7 @@ Type: Normal
 
 Basic Information
 
-TM Move List
 
-01 Work Up, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 
 Basic Ability 1: Helper
@@ -54448,6 +54494,10 @@ Egg Group: Field
 Diet: Herbivore
 
 Habitat: Forest, Grassland, Urban
+
+TM Move List
+
+01 Work Up, 04 Calm Mind, 06 Toxic, 10 Hidden
 
 Power, 11 Sunny Day, 15 Hyper Beam, 16 Light
 
@@ -55743,9 +55793,6 @@ Type: Poison
 
 Basic Information
 
-TM Move List
-
-06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Shed Skin
@@ -55780,6 +55827,11 @@ Egg Group: Field / Dragon
 Diet: Carnivore
 
 Habitat: Forest, Grassland, Marsh
+
+
+TM Move List
+
+06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 Day, 15 Hyper Beam, 17 Protect, 18 Rain Dance, 21
 
@@ -55862,9 +55914,6 @@ Type: Poison
 
 Basic Information
 
-TM Move List
-
-06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Stench
@@ -55894,6 +55943,11 @@ Average Hatch Rate: 10 Days
 
 Diet: Terravore
 Habitat: Urban
+
+
+TM Move List
+
+06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 Day, 12 Taunt, 17 Protect, 18 Rain Dance, 21
 
@@ -56322,9 +56376,7 @@ Type: Poison
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Lunchbox
@@ -56356,6 +56408,10 @@ Average Hatch Rate: 10 Days
 Diet: Omnivore
 
 Habitat: Grassland, Marsh, Urban
+
+TM Move List
+
+06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 Day, 13 Ice Beam, 17 Protect, 18 Rain Dance, 21
 
@@ -56441,9 +56497,7 @@ Type: Poison
 
 Basic Information
 
-TM Move List
 
-06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 
 Basic Ability 1: Lunchbox
@@ -56474,6 +56528,10 @@ Egg Group: Indeterminate
 Diet: Omnivore
 
 Habitat: Grassland, Marsh, Urban
+
+TM Move List
+
+06 Toxic, 09 Venoshock, 10 Hidden Power, 11 Sunny
 
 Day, 13 Ice Beam, 15 Hyper Beam, 17 Protect, 18
 

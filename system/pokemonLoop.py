@@ -19,7 +19,9 @@ Naturewalks = ['Grassland', 'Desert', 'Forest', 'Urban',
                'Wetlands', 'Cave', 'Ocean', 'Mountain', 'Tundra']
 SpeciesWithWeirdStats = ['PUMPKABOO', 'GOURGEIST']
 SkillNames = ['Athl', 'Acro', 'Combat', 'Stealth', 'Percep', 'Focus']
-LevelUpListBreakers = ['TM', 'Type:', 'Tutor', 'Egg', 'Basic']
+MoveListBreakers = ['TM', 'Type:', 'Tutor', 'Egg', 'Basic']
+PokemonWithNoTMList = ['ROTOM-Appliance', 'CATERPIE', 'METAPOD','WEEDLE', 'KAKUNA', 'MAGIKARP', 'WURMPLE', 'SILCOON', 'CASCOON', 'SCATTERBUG',
+ 'KRICKETOT', 'COMBEE', 'SMEARGLE', 'DITTO', 'BELDUM', 'COSMOG', 'COSMOEM', 'SPEWPA']
 
 
 class PokemonLoop:
@@ -37,6 +39,7 @@ class PokemonLoop:
     HeightClass = ''
     WeightNum = 0
     LevelUpMoveList = []
+    TMMoveList = []
 
     def __init__(self, Data):
         if Data[0] not in SpecialNames:
@@ -69,6 +72,7 @@ class PokemonLoop:
         self.HeightClass = ''
         self.WeightNum = 0
         self.LevelUpMoveList = []
+        self.TMMoveList = []
 
     def setAll(self):
         self.setBaseStats()
@@ -78,6 +82,7 @@ class PokemonLoop:
         self.setSize()
         self.setSize()
         self.setLevelUpList()
+        self.setTMList()
 
     # TODO: Review Evolution structure
     # TODO: Fix names with multiple words
@@ -348,7 +353,7 @@ class PokemonLoop:
         # Positioned on -Level- Up Move List, next line puts us on
         i += 4
 
-        while self.InfoArray[i] not in LevelUpListBreakers:
+        while self.InfoArray[i] not in MoveListBreakers:
             try:
                 level = int(self.InfoArray[i])
             except:
@@ -367,6 +372,33 @@ class PokemonLoop:
             })
 
             i += 2
+
+    def setTMList(self):
+        i = 0
+
+        print(self.SpeciesName)
+
+        if self.SpeciesName in PokemonWithNoTMList:
+            return
+
+        while self.InfoArray[i] != "TM":
+            i += 1
+
+        # Positioned on -Level- Up Move List, next line puts us on
+        i += 3
+
+        while self.InfoArray[i] not in MoveListBreakers:
+            level = self.InfoArray[i]
+            self.TMMoveList.append(level)
+
+            while "," not in self.InfoArray[i]:
+                if self.InfoArray[i] not in MoveListBreakers:
+                    i += 1
+                else:
+                    print(self.TMMoveList)
+                    return
+            
+            i+=1
 
     def toJson(self):
         species = {}    

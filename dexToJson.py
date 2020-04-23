@@ -36,7 +36,7 @@ for document in dexTxtFile:
 f.close
 
 rawTxt = open(targetFile, "rt")
-finalTxt = open("out.txt", "wt")
+finalTxt = open("finalJson.txt", "wt")
 
 for line in rawTxt:
 	finalTxt.write(line.replace('}}][{"_id": ', '}}\n{"_id": ')[1:-1])
