@@ -282,8 +282,6 @@ class PokemonLoop:
         while self.InfoArray[i] != 'Ratio:':
             i += 1
 
-        
-
     def setSkillList(self):
         i = 0
         while self.InfoArray[i] != 'Athl':
@@ -371,7 +369,7 @@ class PokemonLoop:
             i += 2
 
     def toJson(self):
-        species = {}
+        species = {}    
 
         Abilities = {}
         Abilities['Basic'] = self.Basic

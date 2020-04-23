@@ -39,7 +39,7 @@ rawTxt = open(targetFile, "rt")
 finalTxt = open("out.txt", "wt")
 
 for line in rawTxt:
-	finalTxt.write(line.replace('}}][{"_id": ', '}}{"_id": ')[1:-1])
+	finalTxt.write(line.replace('}}][{"_id": ', '}}\n{"_id": ')[1:-1])
 
 rawTxt.close()
 finalTxt.close()
