@@ -9811,9 +9811,7 @@ Type: Electric
 
 Basic Information
 
-Egg Move List
 
-Bestow, Bide, Charge, Disarming Voice, Double Slap,
 
 
 Basic Ability 1: Static
@@ -9850,6 +9848,9 @@ Diet: Herbivore
 
 Habitat: Forest, Grassland, Urban
 
+Egg Move List
+
+Bestow, Bide, Charge, Disarming Voice, Double Slap,
 Electric Terrain, Encore, Endure, Fake Out, Flail,
 Lucky Chant, Present, Reversal, Thunder Punch,
 Tickle, Volt Tackle, Wish
@@ -16576,9 +16577,7 @@ Type: Grass
 
 Basic Information
 
-Egg Move List
 
-Amnesia, Beat Up, Bullet Seed, Defog, False Swipe,
 
 
 Basic Ability 1: Sturdy
@@ -16612,6 +16611,9 @@ Diet: Herbivore
 
 Habitat: Forest, Rainforest
 
+Egg Move List
+
+Amnesia, Beat Up, Bullet Seed, Defog, False Swipe,
 Foul Play, Grassy Terrain, Leech Seed, Nasty Plot,
 Power Swap, Quick Attack, Razor Wind, Take Down,
 Worry Seed
@@ -20304,9 +20306,7 @@ Type: Normal
 
 Basic Information
 
-Egg Move List
 
-Aromatherapy, Counter, Endure, Gravity, Heal Bell,
 
 
 Basic Ability 1: Natural Cure
@@ -20342,6 +20342,9 @@ Diet: Herbivore
 
 Habitat: Grassland, Urban
 
+Egg Move List
+
+Aromatherapy, Counter, Endure, Gravity, Heal Bell,
 Helping Hand, Last Resort, Metronome, Mud Bomb,
 Natural Gift, Present, Seismic Toss
 

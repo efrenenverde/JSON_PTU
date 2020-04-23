@@ -40,6 +40,7 @@ class PokemonLoop:
     WeightNum = 0
     LevelUpMoveList = []
     TMMoveList = []
+    EggMoveList = []
 
     def __init__(self, Data):
         if Data[0] not in SpecialNames:
@@ -73,6 +74,7 @@ class PokemonLoop:
         self.WeightNum = 0
         self.LevelUpMoveList = []
         self.TMMoveList = []
+        self.EggMoveList = []
 
     def setAll(self):
         self.setBaseStats()
@@ -83,6 +85,7 @@ class PokemonLoop:
         self.setSize()
         self.setLevelUpList()
         self.setTMList()
+        self.setEggMoveList()
 
     # TODO: Review Evolution structure
     # TODO: Fix names with multiple words
@@ -382,7 +385,7 @@ class PokemonLoop:
         while self.InfoArray[i] != "TM":
             i += 1
 
-        # Positioned on -Level- Up Move List, next line puts us on
+        # Positioned on -TM- Move List
         i += 3
 
         while self.InfoArray[i] not in MoveListBreakers:
@@ -395,6 +398,39 @@ class PokemonLoop:
                 else:
                     return
             
+            i+=1
+
+    def setEggMoveList(self):
+        i = 0
+
+        while self.InfoArray[i]+self.InfoArray[i+1] != "EggMove":
+            if i > len(self.InfoArray)-5:
+                return
+            i += 1
+
+        # Positioned on -Egg- Move List
+        i += 3
+
+        while self.InfoArray[i] not in MoveListBreakers and i < len(self.InfoArray):
+            egg = self.InfoArray[i]
+            
+            if self.InfoArray[i+1] in MoveListBreakers:
+                self.EggMoveList.append(egg)
+                return
+
+            if "," not in egg:
+                while "," not in egg:
+                    i += 1
+                    if self.InfoArray[i] not in MoveListBreakers and i < len(self.InfoArray):
+                        if self.InfoArray[i+1] in MoveListBreakers:
+                            egg += " " + self.InfoArray[i]
+                            self.EggMoveList.append(egg)
+                            return
+                        egg += " " + self.InfoArray[i]
+                    else:
+                        return
+            
+            self.EggMoveList.append(egg[:-1])
             i+=1
 
     def toJson(self):
@@ -418,6 +454,7 @@ class PokemonLoop:
             'Capabilities': self.CapaList.declareJson(),
             'Level Up Move List': self.LevelUpMoveList,
             'TM Move List': self.TMMoveList,
+            'Egg Move List': self.EggMoveList,
             'Skills': self.SpeciesSkills.declareJson()
         })
 
