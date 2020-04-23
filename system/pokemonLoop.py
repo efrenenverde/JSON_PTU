@@ -376,8 +376,6 @@ class PokemonLoop:
     def setTMList(self):
         i = 0
 
-        print(self.SpeciesName)
-
         if self.SpeciesName in PokemonWithNoTMList:
             return
 
@@ -395,7 +393,6 @@ class PokemonLoop:
                 if self.InfoArray[i] not in MoveListBreakers:
                     i += 1
                 else:
-                    print(self.TMMoveList)
                     return
             
             i+=1
@@ -420,6 +417,7 @@ class PokemonLoop:
             'Weight': self.WeightNum,
             'Capabilities': self.CapaList.declareJson(),
             'Level Up Move List': self.LevelUpMoveList,
+            'TM Move List': self.TMMoveList,
             'Skills': self.SpeciesSkills.declareJson()
         })
 
