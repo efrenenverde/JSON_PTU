@@ -334,7 +334,7 @@ Knock Off, Mud-Slap, Natural Gift, Outrage, Secret
 Power, Seed Bomb, Snore, Stomping Tantrum, String
 Shot, Synthesis, Worry Seed
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Thick Fat
 
@@ -1012,7 +1012,7 @@ Outrage, Rock Climb, Secret Power, Seed Bomb, Seismic
 Toss, Snore, Swift, Synthesis, Throat Chop, Thunder Punch,
 Worry Seed
 
-Mega Evolution
+MegaEvolution
 Type: Grass / Dragon
 Ability: Lightning
 Rod
@@ -2722,7 +2722,7 @@ Diet: Carnivore
 
 Habitat: Cave, Mountain
 
-Mega Evolution X
+MegaEvolution X
 
 Type: Fire / Dragon
 Ability: Tough Claws
@@ -2730,7 +2730,7 @@ Stats: +5 Atk, +3 Def,
 
 +2 Sp. Atk
 
-Mega Evolution Y
+MegaEvolution Y
 
 Type: Unchanged
 Ability: Drought
@@ -3425,7 +3425,7 @@ Mega Punch, Mirror Move, Mud-Slap, Rock Climb, Role
 Play, Seismic Toss, Snore, Superpower, Swift, Thunder
 Punch, Vacuum Wave
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Speed Boost
 
@@ -5179,7 +5179,7 @@ Iron Tail, Liquidation, Mega Kick, Mega Punch, Mud-
 Slap, Outrage, Rollout, Seismic Toss, Signal Beam,
 Snore, Water Pledge, Water Pulse, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Mega
 Launcher
@@ -5878,7 +5878,7 @@ Punch, Mud-Slap, Outrage, Rollout, Seismic Toss, Snore,
 Stealth Rock, Stomping Tantrum, Superpower, Uproar,
 Water Pledge, Water Pulse, Whirlpool
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Swift Swim
 
@@ -7743,7 +7743,7 @@ Electroweb, Endeavor, Fury Cutter, Giga Drain,
 Knock Off, Laser Focus, Ominous Wind, Silver Wind,
 Snore, String Shot, Swift, Tailwind, Throat Chop
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Adaptability
 
@@ -11258,7 +11258,7 @@ Magnetic Flux (N), Mega Kick, Mega Punch, Outrage,
 Seismic Toss, Shock Wave, Signal Beam, Snore, Swift,
 Thunder Punch, Zap Cannon (N)
 
-Mega Evolution
+MegaEvolution
 Type: Electric / Dragon
 Ability: Mold Breaker
 
@@ -14661,7 +14661,7 @@ Seismic Toss, Shadow Punch (N), Skill Swap, Snatch, Snore,
 Spite, Sucker Punch, Telekinesis, Thunder Punch, Trick,
 Uproar, Wonder Room
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Shadow Tag
 
@@ -19874,7 +19874,7 @@ Hurricane (N), Laser Focus, Mud-Slap, Ominous
 Wind, Pluck, Sky Attack, Snore, Swift, Tailwind,
 Twister, Uproar
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: No Guard
 
@@ -24250,7 +24250,7 @@ Recycle, Role Play, Seismic Toss, Shock Wave, Signal Beam,
 Skill Swap, Snatch, Snore, Telekinesis, Thunder Punch,
 Trick, Wonder Room, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Trace
 
@@ -24624,7 +24624,7 @@ Wave, Signal Beam, Skill Swap, Snatch, Snore, Stored Power (N),
 Swift, Telekinesis, Thunder Punch, Trick, Wonder Room, Zen
 Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Pixilate
 
@@ -24756,7 +24756,7 @@ Shock Wave, Signal Beam, Skill Swap, Snatch, Snore, Stored
 Power  (N), Swift, Telekinesis, Throat Chop, Thunder Punch, Trick,
 Vacuum Wave, Wonder Room, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Inner Focus
 
@@ -26495,7 +26495,7 @@ Mega Kick, Mega Punch, Mud-Slap, Outrage, Rock Climb, Rollout,
 Seismic Toss, Shock Wave, Snore, Spite, Stealth Rock, Stomping
 Tantrum, Superpower, Thunder Punch, Uproar, Water Pulse
 
-Mega Evolution
+MegaEvolution
 Type: Steel
 Ability: Filter
 
@@ -29540,7 +29540,7 @@ Edge, Feint (N), Fury Cutter, Iron Defense, Iron
 Head, Knock Off, Laser Focus, Ominous Wind, Snore,
 Superpower, Swift, Tailwind
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Technician
 
@@ -34052,7 +34052,7 @@ Slap, Nasty Plot (N), Role Play, Snatch, Snore, Spite,
 Sucker Punch, Super Fang, Swift, Throat Chop,
 Thunder Fang (N), Uproar
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Solar Power
 
@@ -36130,7 +36130,7 @@ Body Slam, Double-Edge, Electric Terrain (N), Fire
 Fang (N), Iron Tail, Laser Focus, Magnet Rise, Mud-
 Slap, Shock Wave, Signal Beam, Snore, Swift, Uproar
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Intimidate
 
@@ -38441,7 +38441,7 @@ Recycle, Role Play, Seismic Toss, Signal Beam, Snore,
 Swift, Telekinesis, Thunder Punch (N), Trick, Vacuum
 Wave, Zen Headbutt (N)
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Pure Power
 
@@ -38680,7 +38680,7 @@ Magnet Rise, Metal Claw (N), Mud-Slap, Role Play,
 Snore, Swift, Thunder Punch, Vacuum Wave, Water
 Pulse, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Adaptability
 
@@ -40542,7 +40542,7 @@ Eruption (N), Fissure (N), Heat Wave, Iron Head,
 Mud-Slap, Rollout, Snore, Stealth Rock, Stomping
 Tantrum
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Sheer Force
 
@@ -42080,7 +42080,7 @@ Phantom Force (N), Role Play, Shock Wave, Skill
 Swap, Snatch, Snore, Spite, Sucker Punch,
 Telekinesis, Throat Chop, Trick
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Prankster
 
@@ -44921,7 +44921,7 @@ Mud-Slap, Outrage, Rock Climb, Role Play, Seed
 Bomb,  Snore, Stomping Tantrum, Synthesis, Water
 Pulse, Worry Seed
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Snow Warning
 
@@ -49544,7 +49544,7 @@ Wind, Iron Head, Laser Focus, Rollout, Sheer Cold
 (N), Signal Beam, Snore, Spite, Super Fang, Water
 Pulse
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Refrigerate
 
@@ -53349,7 +53349,7 @@ Voice, Iron Tail, Mud-Slap, Ominous Wind, Outrage,
 Pluck (N), Sky Attack (N), Snore, Swift, Tailwind,
 Twister, Uproar, Wonder Room
 
-Mega Evolution
+MegaEvolution
 Type: Dragon / Fairy
 Ability: Pixilate
 
@@ -53816,7 +53816,7 @@ Low Kick, Magic Coat (N), Mirror Coat (N), Mud-Slap,
 Role Play, Rototiller (N), Shock Wave, Snore, Swift,
 Thunder Punch, Uproar, Water Pulse
 
-Mega Evolution
+MegaEvolution
 Type: Normal /
 Fighting
 
@@ -60778,7 +60778,7 @@ Curl, Double-Edge, Dragon Pulse, Earth Power, Fire Fang
 Slap, Rock Climb, Rollout, Snore, Stealth Rock, Stomping
 Tantrum, Thunder Fang (N), Twister
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Sand Force
 
@@ -62874,7 +62874,7 @@ Kick, Mega Punch, Mud-Slap, Recycle, Role Play, Seismic
 Toss, Signal Beam, Skill Swap, Snore, Swift, Telekinesis,
 Trick, Water Pulse, Wonder Room, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Shell Armor
 
@@ -64294,7 +64294,7 @@ Dive, Double-Edge, Dragon Pulse, Icy Wind, Iron
 Head, Iron Tail, Outrage, Snore, Spite, Thrash (N),
 Twister, Uproar, Water Pulse
 
-Mega Evolution
+MegaEvolution
 Type: Water / Dark
 Ability: Mold Breaker
 
@@ -65614,7 +65614,7 @@ Liquidation, Mud-Slap, Night Slash (N), Snore, Spite,
 Super Fang, Swift, Uproar, Water Pulse, Whirlpool,
 Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Strong Jaw
 
@@ -68678,7 +68678,7 @@ Bind, Body Slam, Bug Bite, Double-Edge, Focus
 Punch, Fury Cutter, Iron Defense, Knock Off, Snore,
 Stealth Rock, String Shot, Superpower, Throat Chop
 
-Mega Evolution
+MegaEvolution
 Type: Bug / Flying
 Ability: Aerilate
 Gains Sky 6.
@@ -68921,7 +68921,7 @@ Counter, Focus Punch, Fury Cutter, Helping Hand,
 Iron Defense, Knock Off, Low Kick, Night Slash (N),
 Seismic Toss, Snore, Throat Chop, Vacuum Wave
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Skill Link
 
@@ -69416,7 +69416,7 @@ Role Play, Seismic Toss, Shock Wave, Signal Beam, Snatch, Snore,
 Spite, Sucker Punch, Telekinesis, Thunder Punch, Trick, Water
 Pulse, Wonder Room, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Magic Bounce
 
@@ -69552,7 +69552,7 @@ Coat, Mud-Slap, Perish Song (N), Role Play, Shock Wave, Snatch,
 Snore, Spite, Sucker Punch, Superpower, Swift, Throat Chop,
 Water Pulse, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Magic Bounce
 
@@ -72791,7 +72791,7 @@ Punch, Mud-Slap, Outrage, Seismic Toss, Shock Wave,
 Snore, Spite, Sucker Punch, Thunder Punch, Uproar, Water
 Pulse
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Parental Bond
 
@@ -74212,7 +74212,7 @@ Role Play, Signal Beam, Skill Swap, Snatch, Snore, Stomping
 Tantrum, Telekinesis, Throat Chop, Thunder Punch, Uproar, Zen
 Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Normal / Fairy
 Ability: Healer
 
@@ -75926,7 +75926,7 @@ Diet: Omnivore
 
 Habitat: Cave, Forest, Mountain
 
-Mega Evolution
+MegaEvolution
 
 Type: Unchanged
 
@@ -82611,7 +82611,7 @@ Iron Head (N), Iron Tail, Laser Focus, Ominous Wind,
 Snore, Swift, Sky Attack, Snore, Stealth Rock, Tailwind,
 Thunder Fang (N), Twister
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Tough Claws
 
@@ -83321,7 +83321,7 @@ Mud-Slap, Outrage, Seismic Toss, Shock Wave, Snore,
 Spite, Stealth Rock, Stomping Tantrum, Superpower,
 Thunder Fang (N), Thunder Punch, Uproar, Water Pulse
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Sand Stream
 
@@ -83665,7 +83665,7 @@ Focus, Mud-Slap, Ominous Wind, Outrage, Protect
 (N), Rollout, Snore, Swift, Tailwind, Thunder Fang
 (N), Twister, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Aerilate
 
@@ -83961,7 +83961,7 @@ Focus, Magnet Rise (N), Mud-Slap, Rollout, Signal
 Beam, Snore, Stealth Rock, Stomping Tantrum, Swift,
 Telekinesis, Thunder Punch, Trick, Zen Headbutt
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Tough Claws
 
@@ -84289,7 +84289,7 @@ Dragon Pulse, Dual Chop (N), Earth Power, Fire Fang
 Mud-Slap, Outrage, Rock Climb, Snore, Stealth Rock,
 Stomping Tantrum, Swift, Twister, Whirlpool
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Sand Force
 
@@ -85818,7 +85818,7 @@ Average Hatch Rate: 75 Days
 Diet: Omnivore
 Habitat: Cave
 
-Mega Evolution X
+MegaEvolution X
 
 Type: Psychic / Fighting
 
@@ -85828,7 +85828,7 @@ Stats: +8 Atk, +1 Def,
 
 +1 Sp. Def
 
-Mega Evolution Y
+MegaEvolution Y
 
 Type: Unchanged
 Ability: Insomnia
@@ -87226,7 +87226,7 @@ Diet: Omnivore
 
 Habitat: Beach, Forest, Grassland, Mountain, Ocean
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Levitate
 
@@ -87360,7 +87360,7 @@ Diet: Omnivore
 
 Habitat: Beach, Forest, Grassland, Mountain, Ocean
 
-Mega Evolution
+MegaEvolution
 
 Type: Unchanged
 
@@ -87732,7 +87732,7 @@ Voice, Icy Wind, Iron Head, Iron Tail, Mud-Slap, Outrage,
 Shock Wave, Snore, Swift, Tailwind, Twister, Uproar,
 Water Pulse, Whirlpool
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Run Away
 
@@ -93008,7 +93008,7 @@ Endeavor, Gravity, Heal Bell, Helping Hand, Iron
 Defense,  Last Resort, Magnet Rise, Skill Swap, Snore,
 Stealth Rock, Telekinesis, Wonder Room
 
-Mega Evolution
+MegaEvolution
 Type: Unchanged
 Ability: Magic Bounce
 

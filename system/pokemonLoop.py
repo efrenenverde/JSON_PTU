@@ -19,7 +19,7 @@ Naturewalks = ['Grassland', 'Desert', 'Forest', 'Urban',
                'Wetlands', 'Cave', 'Ocean', 'Mountain', 'Tundra']
 SpeciesWithWeirdStats = ['PUMPKABOO', 'GOURGEIST']
 SkillNames = ['Athl', 'Acro', 'Combat', 'Stealth', 'Percep', 'Focus']
-MoveListBreakers = ['TM', 'Type:', 'Tutor', 'Egg', 'Basic']
+MoveListBreakers = ['TM', 'Type:', 'Tutor', 'Egg', 'Basic', 'MegaEvolution']
 PokemonWithNoTMList = ['ROTOM-Appliance', 'CATERPIE', 'METAPOD','WEEDLE', 'KAKUNA', 'MAGIKARP', 'WURMPLE', 'SILCOON', 'CASCOON', 'SCATTERBUG',
  'KRICKETOT', 'COMBEE', 'SMEARGLE', 'DITTO', 'BELDUM', 'COSMOG', 'COSMOEM', 'SPEWPA']
 
@@ -41,6 +41,7 @@ class PokemonLoop:
     LevelUpMoveList = []
     TMMoveList = []
     EggMoveList = []
+    TutorMoveList = []
 
     def __init__(self, Data):
         if Data[0] not in SpecialNames:
@@ -75,6 +76,7 @@ class PokemonLoop:
         self.LevelUpMoveList = []
         self.TMMoveList = []
         self.EggMoveList = []
+        self.TutorMoveList = []
 
     def setAll(self):
         self.setBaseStats()
@@ -86,6 +88,7 @@ class PokemonLoop:
         self.setLevelUpList()
         self.setTMList()
         self.setEggMoveList()
+        self.setTutorMoveList()
 
     # TODO: Review Evolution structure
     # TODO: Fix names with multiple words
@@ -433,6 +436,46 @@ class PokemonLoop:
             self.EggMoveList.append(egg[:-1])
             i+=1
 
+    def setTutorMoveList(self):
+        i = 0
+        while self.InfoArray[i]+self.InfoArray[i+1] != "TutorMove":
+            if i > len(self.InfoArray)-5:
+                return
+            i += 1
+
+        # Positioned on -Tutor- Move List
+        i += 3
+
+        while self.InfoArray[i] not in MoveListBreakers and i < len(self.InfoArray)-1:
+            tutor = self.InfoArray[i]
+
+            if self.InfoArray[i+1] in MoveListBreakers or i > len(self.InfoArray)-1 :
+                self.TutorMoveList.append(tutor)
+                return
+
+            if "," not in tutor:
+                while "," not in tutor:
+                    i += 1
+                    if self.InfoArray[i] not in MoveListBreakers and i < len(self.InfoArray)-1:
+                        if self.InfoArray[i+1] in MoveListBreakers:
+                            tutor += " " + self.InfoArray[i]
+                            self.TutorMoveList.append(tutor)
+                            return
+                        tutor += " " + self.InfoArray[i]
+                    else:
+                        tutor += " " + self.InfoArray[i]
+                        self.TutorMoveList.append(tutor)
+                        return
+            
+            self.TutorMoveList.append(tutor[:-1])
+            i+=1
+
+        if i == len(self.InfoArray)-1:
+            tutor = self.InfoArray[i]
+            self.TutorMoveList.append(tutor)
+            
+
+
     def toJson(self):
         species = {}    
 
@@ -444,8 +487,8 @@ class PokemonLoop:
         species = []
         species.append({
             '_id': self.SpeciesName,
-            'Type': self.Type,
             'Base Stats': self.BaseStats.declareJson(),
+            'Type': self.Type,
             'Abilities': Abilities,
             'Evolution': self.Evolution,
             'Height': self.HeightNum,
@@ -455,6 +498,7 @@ class PokemonLoop:
             'Level Up Move List': self.LevelUpMoveList,
             'TM Move List': self.TMMoveList,
             'Egg Move List': self.EggMoveList,
+            'Tutor Move List': self.TutorMoveList,
             'Skills': self.SpeciesSkills.declareJson()
         })
 
