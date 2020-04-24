@@ -146,6 +146,12 @@ Height: 2’ 4 / 0.7m (Small)
 
 Weight: 30.9 lbs / 14kg (2)
 
+Breeding Information
+Gender Ratio: 87.5% M / 12.5% F
+Egg Group: Field / Plant
+Diet: Herbivore
+Habitat: Forest, Rainforest
+
 Capability List
 
 Overland 7, Swim 4, Jump 3/3, Power 3, Naturewalk
@@ -237,6 +243,12 @@ Size Information
 Height: 6’ 11 / 2.1m (Large)
 
 Weight: 198.4 lbs / 90kg (4)
+
+Breeding Information
+Gender Ratio: 87.5% M / 12.5% F
+Egg Group: Field / Plant
+Diet: Herbivore
+Habitat: Forest, Rainforest
 
 Capability List
 
@@ -1248,6 +1260,12 @@ Skill List
 Athl 3d6, Acro 4d6, Combat 4d6, Stealth 3d6+1,
 Percep 4d6, Focus 3d6
 
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Flying
+Diet: Omnivore
+Habitat: Forest, Grassland
+
 Move List
 Level Up Move List
 
@@ -1284,8 +1302,7 @@ Basic Information
 
 Tutor Move List
 
-Defog, Endure, Pluck, Sky Attack, Snore, Spite, Swift,
-
+Defog, Endure, Pluck, Sky Attack, Snore, Spite, Swift, Tailwind
 
 Basic Ability 1: Keen Eye
 
@@ -1307,7 +1324,7 @@ Height: 2’ 7 / 0.8m (Small)
 
 Weight: 35.3 lbs / 16kg (2)
 
-Tailwind
+
 
 
 CORVIKNIGHT
@@ -1348,6 +1365,12 @@ Size Information
 Height: 7’ 3 / 2.2m (Large)
 
 Weight: 165.3 lbs / 75kg (4)
+
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Flying
+Diet: Omnivore
+Habitat: Forest, Grassland
 
 Capability List
 
@@ -2811,6 +2834,12 @@ Height: 3’ 7 / 1.1m (Medium)
 
 Weight: 172 lbs / 78kg (4)
 
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Mineral
+Diet: Terravore
+Habitat: Cave
+
 Capability List
 
 Overland 6, Swim 3, Jump 0/1, Power 5, Darkvision,
@@ -2902,6 +2931,12 @@ Size Information
 Height: 9’ 2 / 2.8m (Huge)
 
 Weight: 684.5 lbs / 310.5kg (6)
+
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Mineral
+Diet: Terravore
+Habitat: Cave
 
 Capability List
 
@@ -3084,6 +3119,12 @@ Height: 1’ 0 / 0.3m (Small)
 
 Weight: 2.2 lbs / 1kg (1)
 
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Plant / Dragon
+Diet: Herbivore
+Habitat: Forest, Grassland
+
 Capability List
 
 Overland 4, Swim 2, Sky 6, Jump 2/2, Power 1,
@@ -3172,6 +3213,12 @@ Size Information
 Height: 1’ 4 / 0.4m (Small)
 
 Weight: 28.7 lbs / 13kg (2)
+
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Plant / Dragon
+Diet: Herbivore
+Habitat: Forest, Grassland
 
 Capability List
 
@@ -4975,6 +5022,12 @@ Height: 2’ 7 / 0.8m (Small)
 
 Weight: 27.6 lbs / 12.5kg (2)
 
+Breeding Information
+Gender Ratio: 100% M / 0% F
+Egg Group: Fairy / Humanshape
+Diet: Nullivore
+Habitat: Forest, Urban
+
 Capability List
 
 Overland 6, Swim 4, Jump 2/2, Power 3, Darkvision,
@@ -5067,6 +5120,12 @@ Size Information
 Height: 4’ 11 / 1.5m (Medium)
 
 Weight: 134.5 lbs / 61kg (4)
+
+Breeding Information
+Gender Ratio: 100% M / 0% F
+Egg Group: Fairy / Humanshape
+Diet: Nullivore
+Habitat: Forest, Urban
 
 Capability List
 
@@ -6056,6 +6115,13 @@ Height: 2’ 11 / 0.9m (Small)
 
 Weight: 61.7 lbs / 28kg (3)
 
+Breeding Information
+Gender Ratio: 100% M / 0% F
+Egg Group: Fairy
+Average Hatch Rate: 13 Days
+Diet: Herbivore
+Habitat: Forest, Urban
+
 Capability List
 
 Overland 6, Swim 3, Jump 1/1, Power 3, Naturewalk
@@ -6154,6 +6220,13 @@ Height: 2’ 11 / 0.9m (Small)
 
 Weight: 61.7 lbs / 28kg (3)
 
+Breeding Information
+Gender Ratio: 0% M / 100% F
+Egg Group: Fairy
+Average Hatch Rate: 13 Days
+Diet: Herbivore
+Habitat: Forest, Urban
+
 Capability List
 
 Overland 6, Swim 3, Jump 1/1, Power 3, Naturewalk
@@ -6240,6 +6313,13 @@ Adv Ability 2: Cruelty
 Adv Ability 3: Gluttony
 High Ability: Aura Storm
 
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Field / Fairy
+Average Hatch Rate: 13 Days
+Diet: Omnivore
+Habitat: Forest
+
 Capability List
 
 Overland 7, Swim 4, Jump 1/1, Power 4, Darkvision,
@@ -6311,8 +6391,6 @@ Fang, Tickle
 Height: 1’ 0 / 0.3m (Small)
 
 Weight: 6.6 lbs / 3kg (1)
-
-Breeding Information
 
 Tutor Move List
 
@@ -6569,6 +6647,13 @@ Height: 5’ 11 / 1.8m (Medium)
 
 Weight: 418.9 lbs / 190kg (5)
 
+Breeding Information
+Gender Ratio: No Gender
+Egg Group: None
+Average Hatch Rate: 13 Days
+Diet: Herbivore
+Habitat: Forest, Grassland
+
 Capability List
 
 Overland 8, Swim 3, Jump 2/2, Power 7, Mountable
@@ -6658,6 +6743,13 @@ Adv Ability 1: Slush Rush
 Adv Ability 2: Static
 
 High Ability: Moody
+
+Breeding Information
+Gender Ratio: No Gender
+Egg Group: None
+Average Hatch Rate: 13 Days
+Diet: Herbivore
+Habitat: Tundra
 
 Capability List
 
@@ -6759,6 +6851,13 @@ Adv Ability 1: Sand Rush
 
 Adv Ability 2: Strong Jaw
 High Ability: Moody
+
+Breeding Information
+Gender Ratio: No Gender
+Egg Group: None
+Average Hatch Rate: 13 Days
+Diet: Carnivore
+Habitat: Forest, Grassland
 
 Evolution:
 
@@ -6862,6 +6961,13 @@ Size Information
 Height: 6’ 7 / 2m (Large)
 Weight: 385.8 lbs / 175kg (5)
 
+Breeding Information
+Gender Ratio: No Gender
+Egg Group: None
+Average Hatch Rate: 13 Days
+Diet: Herbivore
+Habitat: Forest, Grassland
+
 Capability List
 
 Overland 4, Swim 7, Jump 3/3, Power 7, Chilled,
@@ -6953,6 +7059,13 @@ Size Information
 Height: 5’ 11 / 1.8m (Medium)
 
 Weight: 88.2 lbs / 40kg (2)
+
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Mineral / Dragon
+Average Hatch Rate: 16 Days
+Diet: Terravore
+Habitat: Mountain
 
 Capability List
 
@@ -7146,6 +7259,12 @@ Height: 4’ 7 / 1.4m (Medium)
 
 Weight: 24.3 lbs / 11kg (2)
 
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Indeterminate / Dragon
+Diet: Nullivore
+Habitat: Forest, Mountain, Ocean
+
 Capability List
 
 Overland 3, Swim 6, Sky 6, Jump 2/2, Power 3,
@@ -7241,6 +7360,12 @@ Size Information
 Height: 9’ 10 / 3m (Huge)
 
 Weight: 110.2 lbs / 50kg (4)
+
+Breeding Information
+Gender Ratio: 50% M / 50% F
+Egg Group: Indeterminate / Dragon
+Diet: Nullivore
+Habitat: Forest, Mountain, Ocean
 
 Capability List
 
@@ -9657,6 +9782,13 @@ Height: 9’ 2 / 2.8m (Huge)
 
 Weight: 242.5 lbs / 110kg (5)
 
+Breeding Information
+Gender Ratio: No Gender
+Egg Group: None
+Average Hatch Rate: 75 Days
+Diet: Omnivore
+Habitat: Forest
+
 Capability List
 
 Overland 10, Swim 5, Jump 3/3, Power 10, Aura
@@ -9750,6 +9882,13 @@ Size Information
 Height: 9’ 6 / 2.9m (Huge)
 
 Weight: 463 lbs / 210kg (6)
+
+Breeding Information
+Gender Ratio: No Gender
+Egg Group: None
+Average Hatch Rate: 75 Days
+Diet: Omnivore
+Habitat: Forest
 
 Capability List
 

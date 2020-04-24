@@ -33,6 +33,7 @@ class PokemonLoop:
     High = []
     BaseStats = baseStats.BaseStats()
     CapaList = capabilities.Capabilities()
+    GenderRatio = 0
     SpeciesSkills = speciesSkills.SpeciesSkills()
     Evolution = []
     HeightNum = 0
@@ -70,6 +71,7 @@ class PokemonLoop:
         self.CapaList = capabilities.Capabilities()
         self.SpeciesSkills = speciesSkills.SpeciesSkills()
         self.Evolution = []
+        self.GenderRatio = 0
         self.HeightNum = 0
         self.HeightClass = ''
         self.WeightNum = 0
@@ -89,6 +91,7 @@ class PokemonLoop:
         self.setTMList()
         self.setEggMoveList()
         self.setTutorMoveList()
+        self.setBreedingInfo()
 
     # TODO: Review Evolution structure
     # TODO: Fix names with multiple words
@@ -287,11 +290,19 @@ class PokemonLoop:
     def setBreedingInfo(self):
         i = 0
 
-        if self.SpeciesName == "ROTOM-Appliance" or self.SpeciesName in SpeciesWithWeirdStats:
+        if self.SpeciesName == "ROTOM-Appliance":
             return
 
-        while self.InfoArray[i] != 'Ratio:':
+        while self.InfoArray[i] != "Ratio:":
+            if i > len(self.InfoArray)-5:
+                print(self.SpeciesName + " no tiene Ratio:")
+                return
             i += 1
+
+        if self.InfoArray[i+1] == "No":
+            self.GenderRatio = -1
+        else:
+            self.GenderRatio = self.InfoArray[i+1][:-1]
 
     def setSkillList(self):
         i = 0
@@ -473,8 +484,6 @@ class PokemonLoop:
         if i == len(self.InfoArray)-1:
             tutor = self.InfoArray[i]
             self.TutorMoveList.append(tutor)
-            
-
 
     def toJson(self):
         species = {}    
