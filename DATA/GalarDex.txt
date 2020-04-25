@@ -5225,6 +5225,10 @@ Weight: 0.7 lbs / 0.3kg (1)
 
 Breeding Information
 Gender Ratio: 0% M / 100% F
+Egg Group: Fairy / Indeterminate
+Average Hatch Rate: 10 Days
+Diet: Herbivore
+Habitat: Urban
 
 Capability List
 
@@ -7469,6 +7473,10 @@ Weight: 9.3 lbs / 4.2kg (1)
 
 Breeding Information
 Gender Ratio: 50% M / 50% F
+Egg Group: Field
+Average Hatch Rate: 10 Days
+Diet: Carnivore
+Habitat: Forest, Grassland
 
 Capability List
 
@@ -8210,10 +8218,9 @@ Weight: 125.2 lbs / 56.8kg (4)
 
 Breeding Information
 Gender Ratio: 50% M / 50% F
-
 Egg Group: Humanshape
-
 Diet: Omnivore
+Habitat: Tundra
 
 Capability List
 
@@ -8327,10 +8334,9 @@ Weight: 128.3 lbs / 58.2kg (4)
 
 Breeding Information
 Gender Ratio: 50% M / 50% F
-
 Egg Group: Humanshape
-
 Diet: Omnivore
+Habitat: Tundra
 
 Capability List
 
@@ -8444,11 +8450,10 @@ Weight: 1.1 lbs / 0.5kg (1)
 
 Breeding Information
 Gender Ratio: 25% M / 75% F
-
 Egg Group: Water 1 / Water 3
 Average Hatch Rate: 10 Days
-
 Diet: Nullivore
+Habitat: Ocean
 
 Capability List
 
@@ -8790,6 +8795,10 @@ Weight: 71.7 lbs / 32.5kg (3)
 
 Breeding Information
 Gender Ratio: 50% M / 50% F
+Egg Group: Field
+Diet: Herbivore
+Habitat: Forest, Grassland
+
 
 Capability List
 
@@ -8896,6 +8905,9 @@ Weight: 101.4 lbs / 46kg (3)
 
 Breeding Information
 Gender Ratio: 50% M / 50% F
+Egg Group: Field
+Diet: Herbivore
+Habitat: Forest, Grassland
 
 Capability List
 
@@ -9006,8 +9018,10 @@ Weight: 88.2 lbs / 40kg (3)
 
 Breeding Information
 Gender Ratio: 50% M / 50% F
-
 Egg Group: Field
+Average Hatch Rate: 10 Days
+Diet: Herbivore
+Habitat: Mountain, Tundra
 
 Capability List
 
@@ -10179,6 +10193,16 @@ Speed:                                    3
 
 Basic Information
 
+Breeding Information
+Gender Ratio: Genderless
+
+Egg Group: None
+
+Average Hatch Rate: 75 Days
+
+Diet: Terravore
+Habitat: Urban
+
 Capability List
 
 Overland 4, Swim 1, Burrow 2, Jump 1/1, Power 2,
@@ -10241,15 +10265,7 @@ Height: 0’ 8 / 0.2m (Small)
 
 Weight: 17.6 lbs / 8kg (1)
 
-Breeding Information
-Gender Ratio: Genderless
 
-Egg Group: None
-
-Average Hatch Rate: 75 Days
-
-Diet: Terravore
-Habitat: Urban
 
 
 MELMETAL

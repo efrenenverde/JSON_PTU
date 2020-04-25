@@ -22,6 +22,7 @@ SkillNames = ['Athl', 'Acro', 'Combat', 'Stealth', 'Percep', 'Focus']
 MoveListBreakers = ['TM', 'Type:', 'Tutor', 'Egg', 'Basic', 'MegaEvolution']
 PokemonWithNoTMList = ['ROTOM-Appliance', 'CATERPIE', 'METAPOD','WEEDLE', 'KAKUNA', 'MAGIKARP', 'WURMPLE', 'SILCOON', 'CASCOON', 'SCATTERBUG',
  'KRICKETOT', 'COMBEE', 'SMEARGLE', 'DITTO', 'BELDUM', 'COSMOG', 'COSMOEM', 'SPEWPA']
+GenderRatioNull = ['No', 'Hermaphrodite', 'Genderless']
 
 
 class PokemonLoop:
@@ -34,6 +35,10 @@ class PokemonLoop:
     BaseStats = baseStats.BaseStats()
     CapaList = capabilities.Capabilities()
     GenderRatio = 0
+    EggGroup = []
+    AvgHatch = -1
+    Diet = []
+    Habitat = []
     SpeciesSkills = speciesSkills.SpeciesSkills()
     Evolution = []
     HeightNum = 0
@@ -72,6 +77,10 @@ class PokemonLoop:
         self.SpeciesSkills = speciesSkills.SpeciesSkills()
         self.Evolution = []
         self.GenderRatio = 0
+        self.EggGroup = []
+        self.AvgHatch = -1
+        self.Diet = []
+        self.Habitat = []
         self.HeightNum = 0
         self.HeightClass = ''
         self.WeightNum = 0
@@ -91,7 +100,29 @@ class PokemonLoop:
         self.setTMList()
         self.setEggMoveList()
         self.setTutorMoveList()
-        self.setBreedingInfo()
+        self.setGenderRatio()
+        self.setEggGroup()
+        self.setHatchRate()
+        self.setDiet()
+        self.setHabitat()
+        self.setTypes()
+
+    def setTypes(self):
+        i = 0
+        self.Type = []
+
+        while self.InfoArray[i] != "Type:":
+            if i > len(self.InfoArray)-5:
+                print(self.SpeciesName + " no Type: found")
+                return
+            i += 1
+
+        self.Type.append(self.InfoArray[i+1])
+
+        if self.InfoArray[i+2] == "/":
+            self.Type.append(self.InfoArray[i+3])
+        else:
+            self.Type.append("null")
 
     # TODO: Review Evolution structure
     # TODO: Fix names with multiple words
@@ -287,7 +318,7 @@ class PokemonLoop:
             print(self.SpeciesName + ' messed up the weight part')
             print('Info: ' + str(self.InfoArray[i:i+13]) )
 
-    def setBreedingInfo(self):
+    def setGenderRatio(self):
         i = 0
 
         if self.SpeciesName == "ROTOM-Appliance":
@@ -295,14 +326,78 @@ class PokemonLoop:
 
         while self.InfoArray[i] != "Ratio:":
             if i > len(self.InfoArray)-5:
-                print(self.SpeciesName + " no tiene Ratio:")
                 return
             i += 1
 
-        if self.InfoArray[i+1] == "No":
+        if self.InfoArray[i+1] in GenderRatioNull:
             self.GenderRatio = -1
         else:
-            self.GenderRatio = self.InfoArray[i+1][:-1]
+            self.GenderRatio = float(self.InfoArray[i+1][:-1])
+
+    def setEggGroup(self):
+        i = 0
+
+        while self.InfoArray[i] != "Group:":
+            if i > len(self.InfoArray)-5:
+                print(self.SpeciesName + " Group: not found")
+                return
+            i += 1
+
+        self.EggGroup.append(self.InfoArray[i+1])
+
+        if self.EggGroup[0] == "Water":
+            self.EggGroup[0] = "Water " + self.InfoArray[i+2]
+            i += 1
+        
+        if self.InfoArray[i+2] == "/":
+            self.EggGroup.append(self.InfoArray[i+3])
+            if self.EggGroup[1] == "Water":
+                self.EggGroup[1] = "Water " + self.InfoArray[i+4]
+                i += 1
+
+    def setHatchRate(self):
+        i = 0
+
+        while self.InfoArray[i] != "Rate:":
+            if i > len(self.InfoArray)-5:
+                return
+            i += 1
+        
+        self.AvgHatch = int(self.InfoArray[i+1])
+
+    def setDiet(self):
+        i = 0
+
+        while self.InfoArray[i] != "Diet:":
+            if i > len(self.InfoArray)-5:
+                print(self.SpeciesName + " no Diet: found")
+                return
+            i += 1
+
+        self.Diet.append(self.InfoArray[i+1])
+
+        while ',' in self.InfoArray[i+1]:
+            i+=1
+            j = 0
+            self.Diet[j] = self.Diet[j][:-1]
+            self.Diet.append(self.InfoArray[i+1])
+
+    def setHabitat(self):
+        i = 0
+
+        while self.InfoArray[i] != "Habitat:":
+            if i > len(self.InfoArray)-2:
+                print(self.SpeciesName + " no Habitat: found")
+                return
+            i += 1
+
+        self.Habitat.append(self.InfoArray[i+1])
+
+        while ',' in self.InfoArray[i+1]:
+            i += 1
+            j = 0
+            self.Habitat[j] = self.Habitat[j][:-1]
+            self.Habitat.append(self.InfoArray[i+1])
 
     def setSkillList(self):
         i = 0
@@ -486,6 +581,8 @@ class PokemonLoop:
             self.TutorMoveList.append(tutor)
 
     def toJson(self):
+        if len(self.Evolution) < 1:
+            print(self.SpeciesName + " tiene las evos mal")
         species = {}    
 
         Abilities = {}
@@ -493,6 +590,11 @@ class PokemonLoop:
         Abilities['Advanced'] = self.Advanced
         Abilities['High'] = self.High
 
+        BreedingInfo = {}
+        BreedingInfo['Gender Ratio'] = self.GenderRatio
+        BreedingInfo['Egg Group'] = self.EggGroup
+        BreedingInfo['Average Hatch Rate'] = self.AvgHatch
+        
         species = []
         species.append({
             '_id': self.SpeciesName,
@@ -503,6 +605,9 @@ class PokemonLoop:
             'Height': self.HeightNum,
             'Size Class': self.HeightClass,
             'Weight': self.WeightNum,
+            'Breeding Information': BreedingInfo,
+            'Diet': self.Diet,
+            'Habitat': self.Habitat,
             'Capabilities': self.CapaList.declareJson(),
             'Level Up Move List': self.LevelUpMoveList,
             'TM Move List': self.TMMoveList,
