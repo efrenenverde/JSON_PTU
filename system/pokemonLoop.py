@@ -1,15 +1,19 @@
 import json
+import os
 from models import capabilities
 from models import baseStats
 from models import speciesSkills
 from models import evolution
+import numberClear
+
+fetchNumber = numberClear.getNumberDictionary()
 
 SpecialNames = ['TYPE:', 'GIRATINA', 'MR.', 'MIME', 'HOOPA', 'TAPU', 'ZYGARDE', 'MELOETTA', 'KYUREM', 'TORNADUS', 'LANDORUS',
                 'THUNDURUS', 'SHAYMIN', 'ROTOM', 'DEOXYS', 'WORMADAM', 'DARMANITAN', 'LYCANROC', 'WISHIWASHI', 'MINIOR', 'NECROZMA', 'NIDORAN',
-                'MEOWSTIC', 'ZACIAN', 'ZAMAZENTA', 'INDEEDEE', 'EISCUE']
+                'MEOWSTIC', 'ZACIAN', 'ZAMAZENTA', 'INDEEDEE', 'EISCUE', 'URSHIFU']
 RegionalForms = ['RATTATA', 'RATICATE', 'RAICHU', 'SANDSHREW', 'SANDSLASH', 'VULPIX', 'NINETALES', 'DIGLETT', 'DUGTRIO', 'MEOWTH',
                  'PERSIAN', 'GEODUDE', 'GRAVELER', 'GOLEM', 'GRIMER', 'MUK', 'EXEGGUTOR', 'MAROWAK', 'PONYTA', 'RAPIDASH', 'SLOWPOKE', 'WEEZING',
-                 'CORSOLA', 'ZIGZAGOON', 'LINOONE', 'DARUMAKA', 'YAMASK', 'STUNFISK']
+                 'CORSOLA', 'ZIGZAGOON', 'LINOONE', 'DARUMAKA', 'YAMASK', 'STUNFISK', 'FARFETCHD', 'SLOWBRO']
 RegionNames = ['Alola', 'Galar']
 AbilityBreakers = ['Basic', 'Adv', 'High', 'Evolution:', 'Capability']
 ExtraSpecialNames = ['MR.-MIME', 'DARMANITAN-Galar,']
@@ -27,6 +31,8 @@ GenderRatioNull = ['No', 'Hermaphrodite', 'Genderless']
 
 class PokemonLoop:
     SpeciesName = ''
+    DexNumber = 0
+    PTUNumber = 0
     InfoArray = []
     Type = []
     Basic = []
@@ -49,11 +55,12 @@ class PokemonLoop:
     EggMoveList = []
     TutorMoveList = []
 
-    def __init__(self, Data):
+    def __init__(self, Data, currNumber):
+        self.PTUNumber = currNumber
         if Data[0] not in SpecialNames:
             self.SpeciesName = Data[0]
-        elif Data[0] == "JR.":
-            self.SpeciesName = "MIME-JR."
+            if "JR" in Data[0]:
+                self.SpeciesName = 'MIME-JR.'
         else:
             self.SpeciesName = Data[0] + '-' + Data[1]
 
@@ -69,6 +76,7 @@ class PokemonLoop:
 
     def resetAll(self):
         self.BaseStats = baseStats.BaseStats()
+        self.DexNumber = 0
         self.Type = []
         self.Basic = []
         self.Advanced = []
@@ -90,6 +98,7 @@ class PokemonLoop:
         self.TutorMoveList = []
 
     def setAll(self):
+
         self.setBaseStats()
         self.setBasicInformation()
         self.setCapabilities()
@@ -106,6 +115,7 @@ class PokemonLoop:
         self.setDiet()
         self.setHabitat()
         self.setTypes()
+        self.setDexNumber()
 
     def setTypes(self):
         i = 0
@@ -401,6 +411,7 @@ class PokemonLoop:
 
     def setSkillList(self):
         i = 0
+
         while self.InfoArray[i] != 'Athl':
             i += 1
 
@@ -580,9 +591,20 @@ class PokemonLoop:
             tutor = self.InfoArray[i]
             self.TutorMoveList.append(tutor)
 
+    def setDexNumber(self):
+        self.DexNumber = fetchNumber.getNumber(self.SpeciesName.upper())
+
     def toJson(self):
+
+        if (self.SpeciesName == 'ROTOM-Appliance'):
+            return
+
         if len(self.Evolution) < 1:
             print(self.SpeciesName + " tiene las evos mal")
+
+        self.SpeciesName = self.SpeciesName.replace('Galar', 'Galarian')
+        self.SpeciesName = self.SpeciesName.replace('Alola', 'Alolan')
+        
         species = {}    
 
         Abilities = {}
@@ -598,6 +620,8 @@ class PokemonLoop:
         species = []
         species.append({
             '_id': self.SpeciesName,
+            'number': self.DexNumber,
+            'ptuNumber': self.PTUNumber,
             'Base Stats': self.BaseStats.declareJson(),
             'Type': self.Type,
             'Abilities': Abilities,
@@ -616,5 +640,37 @@ class PokemonLoop:
             'Skills': self.SpeciesSkills.declareJson()
         })
 
+        specie = {
+            '_id': self.SpeciesName,
+            'number': self.DexNumber,
+            'ptuNumber': self.PTUNumber,
+            'Base Stats': self.BaseStats.declareJson(),
+            'Type': self.Type,
+            'Abilities': Abilities,
+            'Evolution': self.Evolution,
+            'Height': self.HeightNum,
+            'Size Class': self.HeightClass,
+            'Weight': self.WeightNum,
+            'Breeding Information': BreedingInfo,
+            'Diet': self.Diet,
+            'Habitat': self.Habitat,
+            'Capabilities': self.CapaList.declareJson(),
+            'Level Up Move List': self.LevelUpMoveList,
+            'TM Move List': self.TMMoveList,
+            'Egg Move List': self.EggMoveList,
+            'Tutor Move List': self.TutorMoveList,
+            'Skills': self.SpeciesSkills.declareJson()
+        }
+
         with open('data.txt', 'a') as outfile:
             json.dump(species, outfile)
+
+        speciesJson = 'species/' + self.SpeciesName + ".json"
+        
+        try:
+            os.remove(speciesJson)
+        except IOError:
+            print('First save of ' + self.SpeciesName)
+
+        with open(speciesJson, 'a') as outfile:
+            json.dump(specie, outfile)
